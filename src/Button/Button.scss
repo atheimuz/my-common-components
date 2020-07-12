@@ -1,0 +1,18 @@
+@import "../styles/utils";
+
+.my-button {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+
+    &.primary {
+        border-color: $main-color;
+        background-color: $main-color;
+        color: $white;
+    }
+
+    &.secondary {
+        border-color: $main-color;
+        color: $main-color;
+    }
+}
