@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Button } from "my-common-components"
+import { Button, Message } from "my-common-components"
 
 const App = () => {
     return (
@@ -20,6 +20,10 @@ const App = () => {
             <Button className="test" theme="dashed">
                 dashed
             </Button>
+            <Button className="test" theme="dashed">
+                dashed
+            </Button>
+            <Message>안녕</Message>
         </>
     )
 }

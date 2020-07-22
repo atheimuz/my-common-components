@@ -1,0 +1,26 @@
+@import "../styles/utils";
+
+.my-message {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 7px 10px 6px;
+    border-radius: 20px;
+
+    &.send {
+        border-bottom-right-radius: 0;
+        background-color: $main-color;
+        color: $white;
+    }
+
+    &.receive {
+        border-bottom-left-radius: 0;
+        background-color: $gray-1;
+    }
+
+    &-content {
+        word-break: break-all;
+        white-space: pre-line;
+    }
+}
