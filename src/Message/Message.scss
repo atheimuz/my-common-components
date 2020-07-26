@@ -9,14 +9,32 @@
     border-radius: 20px;
 
     &.send {
+        align-self: flex-end;
         border-bottom-right-radius: 0;
         background-color: $main-color;
         color: $white;
+
+        & + .send {
+            margin-top: 2px;
+        }
+
+        & + .receive {
+            margin-top: 6px;
+        }
     }
 
     &.receive {
+        align-self: end;
         border-bottom-left-radius: 0;
         background-color: $gray-1;
+
+        & + .receive {
+            margin-top: 2px;
+        }
+
+        & + .send {
+            margin-top: 6px;
+        }
     }
 
     &-content {
