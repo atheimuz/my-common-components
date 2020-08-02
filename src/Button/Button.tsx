@@ -23,7 +23,7 @@ const Button = ({
         <button
             type="button"
             className={cx("my-button", className, theme, size)}
-            onClick={onClick && onClick()}
+            onClick={() => onClick && onClick()}
             disabled={disabled}
         >
             <div>{children}</div>
