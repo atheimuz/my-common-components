@@ -1,34 +1,30 @@
-import React from "react"
-import cx from "classnames"
-import "./Button.scss"
+import React from "react";
+import cx from "classnames";
+import "./Button.scss";
 
-interface Props {
-    children: any
-    className: string
-    theme: string
-    size: string
-    onClick: Function
-    disabled: boolean
+export interface Props {
+    children: any;
+    className: string;
+    theme: string;
+    size: string;
 }
 
 const Button = ({
     children,
     className,
-    theme = "default",
+    theme = "primary",
     size = "middle",
-    onClick,
-    disabled
+    ...rest
 }: Props) => {
     return (
         <button
             type="button"
             className={cx("my-button", className, theme, size)}
-            onClick={() => onClick && onClick()}
-            disabled={disabled}
+            {...rest}
         >
             <div>{children}</div>
         </button>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;
