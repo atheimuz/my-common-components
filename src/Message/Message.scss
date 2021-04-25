@@ -7,6 +7,7 @@
     position: relative;
     padding: 7px 10px 6px;
     border-radius: 20px;
+    color: $text-color;
 
     &.send {
         align-self: flex-end;
@@ -37,8 +38,8 @@
         }
     }
 
-    &-content {
+    .my-message-content {
         word-break: break-all;
-        white-space: pre-line;
+        white-space: pre-wrap;
     }
 }
