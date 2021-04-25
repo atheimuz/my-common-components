@@ -1,24 +1,24 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react";
+import React from "react"
+import { Story, Meta } from "@storybook/react"
 
-import Button, { Props } from "./Button";
+import Button, { Props } from "./Button"
 
 export default {
     title: "Example/Button",
     component: Button
-} as Meta;
+} as Meta
 
-const Template: Story<Props> = (args) => <Button {...args} />;
+const Template: Story<Props> = (args) => <Button {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
     children: "Button"
-};
+}
 Default.argTypes = {
     theme: {
         control: {
             type: "select",
-            options: ["primary", "secondary", "dashed", "text", "link"]
+            options: ["primary", "secondary", "tertiary", "dashed", "link"]
         }
     },
     size: {
@@ -27,4 +27,30 @@ Default.argTypes = {
     disabled: {
         control: { type: "boolean" }
     }
-};
+}
+
+export const Theme: Story<Props> = (args) => {
+    const themeArray = ["primary", "secondary", "tertiary", "dashed", "link"]
+
+    return (
+        <>
+            {themeArray.map((theme, index) => (
+                <div
+                    key={index}
+                    style={{ display: "flex", marginBottom: "10px" }}
+                >
+                    <Button
+                        theme={theme}
+                        key={index}
+                        style={{ marginRight: "15px" }}
+                    >
+                        {theme}
+                    </Button>
+                    <Button theme={theme} disabled>
+                        {theme}
+                    </Button>
+                </div>
+            ))}
+        </>
+    )
+}

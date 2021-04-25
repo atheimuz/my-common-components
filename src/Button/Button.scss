@@ -10,16 +10,16 @@
     background-color: transparent;
     transition: border-color 0.3s, background-color 0.3s, color 0.3s;
     box-sizing: border-box;
+    color: $text-color;
     cursor: pointer;
-
-    &:hover {
-        border-color: $main-color;
-        color: $main-color;
-    }
 
     > div {
         position: relative;
         z-index: 1;
+    }
+
+    &:disabled {
+        cursor: default;
     }
 
     &.primary {
@@ -27,9 +27,15 @@
         background-color: $main-color;
         color: $white;
 
-        &:hover {
+        &:not(:disabled):hover {
             border-color: $active-color;
             background-color: $active-color;
+        }
+
+        &:disabled {
+            background-color: $gray-0;
+            border-color: $gray-0;
+            color: $gray-3;
         }
     }
 
@@ -37,42 +43,41 @@
         border-color: $main-color;
         color: $main-color;
 
-        &:hover {
+        &:not(:disabled):hover {
             border-color: $main-color;
             background-color: $main-color;
             color: $white;
-
-            &:before {
-                width: 100%;
-                height: 100%;
-                border-radius: 4px;
-            }
         }
 
-        &:before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background-color: $main-color;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s, border-radius 0.3s;
-            box-sizing: border-box;
+        &:disabled {
+            border-color: $inactive-color;
+            color: $gray-3;
+        }
+    }
+
+    &.tertiary {
+        border-color: $gray-2;
+
+        &:not(:disabled):hover {
+            border-color: $main-color;
+            color: $main-color;
+        }
+
+        &:disabled {
+            border-color: $inactive-color;
         }
     }
 
     &.dashed {
         border-style: dashed;
-    }
 
-    &.text {
-        border-color: transparent;
+        &:not(:disabled):hover {
+            border-color: $active-color;
+            color: $active-color;
+        }
 
-        &:hover {
-            color: $main-color;
+        &:disabled {
+            color: $gray-3;
         }
     }
 
@@ -80,8 +85,12 @@
         border-color: transparent;
         color: $main-color;
 
-        &:hover {
+        &:not(:disabled):hover {
             color: $active-color;
+        }
+
+        &:disabled {
+            color: $gray-3;
         }
     }
 
@@ -104,12 +113,5 @@
         padding: 0 30px;
         font-size: 18px;
         font-weight: $font-weight-bold;
-    }
-
-    &:disabled {
-        background-color: $inactive-color;
-        border-color: $inactive-color;
-        color: $text-color;
-        cursor: default;
     }
 }
