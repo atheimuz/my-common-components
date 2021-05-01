@@ -1,0 +1,48 @@
+@import "../styles/utils";
+
+.my-play-list-card {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    width: 240px;
+    height: 330px;
+    padding: 20px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $white;
+    box-sizing: border-box;
+
+    .play-list-image-shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(transparent, $black);
+    }
+
+    .play-list-content {
+        position: relative;
+    }
+
+    .play-list-title {
+        overflow: hidden;
+        max-height: 60px;
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.5;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* 라인수 */
+        -webkit-box-orient: vertical;
+    }
+
+    .play-list-counts {
+        margin-top: 12px;
+        font-size: 14px;
+        color: $gray-3;
+    }
+}
