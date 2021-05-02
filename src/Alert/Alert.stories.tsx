@@ -1,7 +1,7 @@
 import React from "react"
 import { Story, Meta } from "@storybook/react"
 
-import Alert, { Props } from "./Alert"
+import Alert, {Props} from "./Alert"
 
 export default {
     title: "Example/Alert",

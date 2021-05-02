@@ -29,7 +29,7 @@ Default.argTypes = {
     }
 }
 
-export const Theme: Story<Props> = (args) => {
+export const Theme: Story<Props> = () => {
     const themeArray = ["primary", "secondary", "tertiary", "dashed", "link"]
 
     return (
@@ -42,7 +42,7 @@ export const Theme: Story<Props> = (args) => {
                     <Button
                         theme={theme}
                         key={index}
-                        style={{ marginRight: "15px" }}
+                        // style={{ marginRight: "15px" }}
                     >
                         {theme}
                     </Button>

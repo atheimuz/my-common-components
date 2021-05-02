@@ -2,8 +2,8 @@ import React from "react";
 import cx from "classnames";
 import "./PlayListCard.scss";
 
-interface Props {
-    data: object;
+export interface Props {
+    data: any;
 }
 
 const PlayListCard = ({ data }: Props) => {

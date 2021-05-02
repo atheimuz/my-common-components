@@ -2,7 +2,7 @@ import React from "react"
 import cx from "classnames"
 import "./Switch.scss"
 
-interface Props {
+export interface Props {
     className: string
     checked: boolean
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import cx from "classnames"
 import "./Alert.scss"
 
-interface Props {
+export interface Props {
     children: any
     className: string
     status: boolean

@@ -2,7 +2,7 @@ import React from "react"
 import cx from "classnames"
 import "./Message.scss"
 
-interface Props {
+export interface Props {
     children: any
     className: string
     type: string
