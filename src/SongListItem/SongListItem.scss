@@ -1,0 +1,77 @@
+@import "../styles/utils";
+
+.song-list-item {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    max-width: 340px;
+    padding: 8px 0;
+    border-top: 1px solid $border-color;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+        .song-list-item-icon {
+            display: block;
+        }
+    }
+
+    p {
+        overflow: hidden;
+        width: 268px;
+        margin: 0;
+        color: $text-color;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    img {
+        display: block;
+        width: 56px;
+        height: 56px;
+        border-radius: 4px;
+    }
+
+    .song-list-item-image {
+        position: relative;
+    }
+
+    .song-list-item-icon {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-top: 8px solid transparent;
+            border-left: 12px solid $white;
+            // border-right: 6px solid transparent;
+            border-bottom: 8px solid transparent;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .song-list-item-content {
+        flex: 1;
+        margin-left: 16px;
+    }
+
+    .song-list-item-title {
+        font-size: 14px;
+        font-weight: $font-weight-medium;
+    }
+
+    .song-list-item-singer {
+        margin-top: 4px;
+        font-size: 12px;
+        color: $gray-5;
+    }
+}
