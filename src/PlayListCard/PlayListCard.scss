@@ -3,6 +3,7 @@
 .my-play-list-card {
     display: flex;
     align-items: flex-end;
+    flex-shrink: 0;
     position: relative;
     overflow: hidden;
     width: 240px;
@@ -13,7 +14,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: $white;
+    transition: width .4s;
     box-sizing: border-box;
+
+    &:hover {
+        width: 360px;
+    }
 
     .play-list-image-shadow {
         position: absolute;
@@ -33,6 +39,7 @@
         max-height: 60px;
         margin: 0;
         font-size: 20px;
+        font-weight: $font-weight-medium;
         line-height: 1.5;
         text-overflow: ellipsis;
         display: -webkit-box;
