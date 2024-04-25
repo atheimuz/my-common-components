@@ -9,13 +9,13 @@ export interface Props {
 
 const Switch = ({ className, checked, ...rest }: Props) => {
     return (
-        <div
+        <label
             className={cx("my-switch", className, { active: checked })}
-            tabIndex={0}
             {...rest}
         >
+            <input type="checkbox" checked={checked} hidden />
             <div className="my-switch-handle" />
-        </div>
+        </label>
     )
 }
 
