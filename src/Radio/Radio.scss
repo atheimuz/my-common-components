@@ -2,7 +2,8 @@
 
 .my-radio {
     display: inline-flex;
-
+    flex-shrink: 0;
+    
     &.disabled {
         color: $inactive-text-color;
     }
@@ -80,6 +81,8 @@
 
 
 .my-radio-group {
+    display: flex;
+
     &.horizontal {
         .my-radio + .my-radio {
             margin-left: 8px;
@@ -88,6 +91,8 @@
 
 
     &.vertical {
+        flex-direction: column;
+
         .my-radio + .my-radio {
             margin-top: 8px;
         }

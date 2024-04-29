@@ -4,21 +4,25 @@ import "./Radio.scss"
 
 export interface Props {
     className: string
+    checked: boolean
     disabled: boolean
     name: string
     value: string
+    children: React.ReactNode
 }
 
 export interface GroupProps {
     className: string
     direction: "horizontal" | "vertical"
     name: string
+    children: React.ReactNode
 }
 
 const Radio = ({
     className,
     name,
     value,
+    checked,
     disabled,
     children,
     ...rest
@@ -30,6 +34,7 @@ const Radio = ({
                     type="radio"
                     value={value}
                     name={name}
+                    checked={checked}
                     disabled={disabled}
                     {...rest}
                     hidden
