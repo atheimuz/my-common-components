@@ -5,11 +5,13 @@ import "./Dropdown.scss"
 export interface Props {
     className: string
     checked: boolean
+    children: React.ReactNode
 }
 
 export interface ItemProps {
     className: string
     disabled: boolean
+    children: React.ReactNode
 }
 
 const Dropdown = ({ className, children, ...rest }: Props) => {
@@ -30,7 +32,11 @@ export const DropdownItem = ({
     ...rest
 }: ItemProps) => {
     return (
-        <li className={cx("my-dropdown-list-item", { disabled })} tabIndex={0}>
+        <li
+            className={cx("my-dropdown-list-item", { disabled })}
+            tabIndex={0}
+            {...rest}
+        >
             {children}
         </li>
     )

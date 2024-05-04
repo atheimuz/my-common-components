@@ -43,7 +43,6 @@ export const SegmentedItem = ({
     className,
     setActiveIndex,
     checked,
-    disabled,
     children,
     ...rest
 }: ItemProps) => {
@@ -54,11 +53,7 @@ export const SegmentedItem = ({
     }, [checked])
 
     return (
-        <li
-            className={cx("my-segmented-item", { disabled })}
-            tabIndex={0}
-            {...rest}
-        >
+        <li className={cx("my-segmented-item")} tabIndex={0} {...rest}>
             {children}
         </li>
     )

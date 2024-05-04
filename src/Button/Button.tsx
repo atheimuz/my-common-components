@@ -3,11 +3,11 @@ import cx from "classnames"
 import "./Button.scss"
 
 export interface Props {
-    children?: any
+    children?: React.ReactNode
     className?: string
-    theme?: string
-    size?: string
-    disabled?: boolean
+    theme: "primary" | "secondary" | "tertiary" | "dashed" | "link"
+    size: "small" | "middle" | "large"
+    disabled: boolean
 }
 
 const Button = ({

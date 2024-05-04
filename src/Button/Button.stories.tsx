@@ -11,21 +11,12 @@ export default {
 const Template: Story<Props> = (args) => <Button {...args} />
 
 export const Default = Template.bind({})
-Default.args = {
-    children: "Button"
-}
 Default.argTypes = {
-    theme: {
+    children: {
         control: {
-            type: "select",
-            options: ["primary", "secondary", "tertiary", "dashed", "link"]
-        }
-    },
-    size: {
-        control: { type: "select", options: ["small", "middle", "large"] }
-    },
-    disabled: {
-        control: { type: "boolean" }
+            type: "text"
+        },
+        defaultValue: "Button"
     }
 }
 
