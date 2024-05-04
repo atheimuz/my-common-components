@@ -1,0 +1,87 @@
+@import "../styles/utils";
+
+.my-tooltip {
+    position: relative;
+    display: inline;
+
+    .my-tooltip-msg {
+        position: absolute;
+        width: max-content;
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: $black;
+        color: $white;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            border: 3px solid $black;
+        }
+
+        &.top {
+            left: 50%;
+            bottom: calc(100% + 6px);
+            transform: translateX(-50%);
+
+            &:before {
+                left: 50%;
+                bottom: -6px;
+                margin-left: -3px;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+                border-right-color: transparent;
+            }
+        }
+
+
+        &.bottom {
+            top: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:before {
+                top: -6px;
+                left: 50%;
+                margin-left: -3px;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-right-color: transparent;
+            }
+        }
+
+
+
+        &.right {
+            top: 50%;
+            left: calc(100% + 6px);
+            transform: translateY(-50%);
+
+            &:before {
+                left: -6px;
+                top: 50%;
+                margin-top: -3px;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+
+
+
+        &.left {
+            top: 50%;
+            right: calc(100% + 6px);
+            transform: translateY(-50%);
+
+            &:before {
+                right: -6px;
+                top: 50%;
+                margin-top: -3px;
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+    }
+}
