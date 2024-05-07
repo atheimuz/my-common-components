@@ -1,0 +1,51 @@
+@import "../styles/utils";
+
+.my-collapse {
+}
+
+
+.my-panel {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &.active {
+        background-color: $gray-0;
+
+        .my-panel-title {
+            font-weight: 500;
+
+            &:after {
+                content: "-";
+            }
+        }
+
+        .my-panel-content {
+            display: block;
+        }
+    }
+
+    & + .my-panel {
+        margin-top: 12px;
+    }
+
+    .my-panel-title {
+        position: relative;
+        padding: 12px 24px 12px 12px;
+        border-bottom: 1px solid $gray-1;
+
+        &:after {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            font-size: 24px;
+            transform: translateY(-50%);
+        }
+    }
+
+    .my-panel-content {
+        display: none;
+        padding: 12px 12px;
+    }
+}
