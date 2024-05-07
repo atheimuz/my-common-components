@@ -1,0 +1,37 @@
+@import "../styles/utils";
+
+.my-pagination {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 0;
+    list-style: none;
+
+    .my-pagination-item {
+        margin: 0 8px;
+    }
+
+    .my-pagination-btn,
+    .my-pagination-control-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background-color: transparent;
+
+        &:hover {
+            color: $active-color;
+        }
+    }
+
+    .my-pagination-btn {
+
+        &.active {
+            border: 1px solid $active-color;
+            background-color: $active-light-color;
+            color: $active-color;
+        }
+    }
+}
