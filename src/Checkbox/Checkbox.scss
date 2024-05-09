@@ -1,0 +1,42 @@
+@import "../styles/utils";
+
+.my-checkbox {
+    display: flex;
+    align-items: center;
+    
+    input[type="checkbox"] {
+        &:checked {
+            & + .my-checkbox-mark {
+                background-color: $active-color;
+                color: $white;
+            }
+        }
+
+        &:disabled {
+            & + .my-checkbox-mark {
+                background-color: $gray-0;
+                color: $gray-2;
+            }
+        }
+    }
+    
+    .my-checkbox-mark {
+        display: inline-flex;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+        border-radius: 4px;
+        border: 1px solid $gray-1;
+        color: transparent;
+
+        &:after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
+}
