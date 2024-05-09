@@ -1,0 +1,13 @@
+@import "../styles/utils";
+
+.my-tag {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid $gray-2;
+    background-color: $gray-0;
+    color: $gray-4;
+}
