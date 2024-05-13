@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import cx from "classnames"
 import "./Tooltip.scss"
 
@@ -19,6 +19,12 @@ const Tooltip = ({
     ...rest
 }: Props) => {
     const [status, setStatus] = useState(true)
+
+    useEffect(() => {
+        if (!status && ["keep", "hover"].indexOf(type) > -1) {
+            setStatus(true)
+        }
+    }, [type])
 
     return (
         <div className={cx("my-tooltip", className, type)} {...rest}>
