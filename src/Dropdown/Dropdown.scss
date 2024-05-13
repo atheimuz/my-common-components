@@ -4,7 +4,10 @@
     position: relative;
 
     &:focus-within {
-        border-color: $active-color;
+        .my-dropdown-title {
+            border-color: $active-color;
+            box-shadow: 0 0 4px 1px rgba($active-color, 0.4);
+        }
     }
     
     &:not(:focus-within) {
@@ -13,7 +16,39 @@
         }
     }
 
-    &,
+    &.small {
+        .my-dropdown-title,
+        .my-dropdown-list-item {
+            height: $field-height-s;
+            font-size: $field-font-size-s;
+        }
+    }
+
+    &.middle {
+        .my-dropdown-title,
+        .my-dropdown-list-item {
+            height: $field-height-m;
+            font-size: $field-font-size-m;
+        }
+    }
+
+    &.large {
+        .my-dropdown-title,
+        .my-dropdown-list-item {
+            height: $field-height-l;
+            font-size: $field-font-size-l;
+        }
+    }
+
+    &.disabled {
+        .my-dropdown-title {
+            background-color: $gray-0;
+            color: $gray-3;
+            cursor: not-allowed;
+        }
+    }
+
+    .my-dropdown-title,
     .my-dropdown-list {
         border: 1px solid $gray-1;
         border-radius: 4px;
@@ -21,7 +56,9 @@
 
     .my-dropdown-title,
     .my-dropdown-list-item {
-        padding: 8px 16px 8px 8px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px 0 8px;
     }
 
     .my-dropdown-title {
@@ -30,17 +67,18 @@
 
 
     .my-dropdown-list {
+        overflow: hidden;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 4px);
         left: 0;
         right: 0;
+        margin-block-start: 0;
         padding-inline-start: 0;
-        // box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.05);
     }
 
     .my-dropdown-list-item {
         display: flex;
-        padding: 8px 16px 8px 8px;
         cursor: pointer;
 
         &:not(.disabled) {
@@ -53,10 +91,6 @@
             background-color: $gray-0;
             color: $gray-3;
             cursor: not-allowed;
-        }
-
-        & + .my-dropdown-list-item {
-            border-top: 1px solid $gray-1;
         }
     }
 }

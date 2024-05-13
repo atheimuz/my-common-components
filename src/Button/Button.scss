@@ -95,23 +95,23 @@
     }
 
     &.small {
-        height: 36px;
+        height: $field-height-s;
         padding: 0 16px;
-        font-size: 14px;
+        font-size: $field-font-size-s;
         font-weight: $font-weight-medium;
     }
 
     &.middle {
-        height: 42px;
+        height: $field-height-m;
         padding: 0 22px;
-        font-size: 14px;
+        font-size: $field-font-size-m;
         font-weight: $font-weight-bold;
     }
 
     &.large {
-        height: 50px;
+        height: $field-height-l;
         padding: 0 30px;
-        font-size: 18px;
+        font-size: $field-font-size-l;
         font-weight: $font-weight-bold;
     }
 }
