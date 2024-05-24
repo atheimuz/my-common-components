@@ -8,6 +8,98 @@
     border-radius: 4px;
     font-size: 14px;
     border: 1px solid $gray-2;
-    background-color: $gray-0;
     color: $gray-4;
+
+    &.gray {
+        border-color: $gray-2;
+        background-color: $gray-0;
+
+        &.line {
+            color: $gray-4;
+        }
+
+        &.fill {
+            border-color: $gray-4;
+            background-color: $gray-4;
+            color: $white;
+        }
+    }
+
+    &.red {
+        border-color: $red-light;
+
+        &.line {
+            color: $red-light;
+        }
+
+        &.fill {
+            background-color: $red-light;
+            color: $white;
+        }
+    }
+
+    &.orange {
+        border-color: $orange-light;
+
+        &.line {
+            color: $orange-light;
+        }
+
+        &.fill {
+            background-color: $orange-light;
+            color: $white;
+        }
+    }
+
+    &.yellow {
+        border-color: $yellow-light;
+
+        &.line {
+            color: $yellow-light;
+        }
+
+        &.fill {
+            background-color: $yellow-light;
+            color: $white;
+        }
+    }
+
+    &.green {
+        border-color: $green-light;
+
+        &.line {
+            color: $green-light;
+        }
+
+        &.fill {
+            background-color: $green-light;
+            color: $white;
+        }
+    }
+
+    &.blue {
+        border-color: $blue-light;
+
+        &.line {
+            color: $blue-light;
+        }
+
+        &.fill {
+            background-color: $blue-light;
+            color: $white;
+        }
+    }
+
+    &.purple {
+        border-color: $purple-light;
+
+        &.line {
+            color: $purple-light;
+        }
+
+        &.fill {
+            background-color: $purple-light;
+            color: $white;
+        }
+    }
 }
