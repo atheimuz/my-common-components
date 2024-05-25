@@ -3,24 +3,39 @@ import cx from "classnames"
 import "./Dropdown.scss"
 
 export interface Props {
-    className: string
-    checked: boolean
+    className?: string
+    size: "small" | "middle" | "large"
+    disabled: boolean
+    value: React.ReactNode
     children: React.ReactNode
 }
 
 export interface ItemProps {
-    className: string
+    className?: string
     disabled: boolean
     children: React.ReactNode
 }
 
-const Dropdown = ({ className, children, ...rest }: Props) => {
+const Dropdown = ({
+    className,
+    size = "middle",
+    value,
+    children,
+    disabled,
+    ...rest
+}: Props) => {
     return (
-        <div className={cx("my-dropdown", className)} {...rest}>
-            <div className="my-dropdown-title" tabIndex={0}>
-                타이틀 영역
+        <div
+            className={cx("my-dropdown", size, className, { disabled })}
+            tabIndex={disabled ? undefined : 0}
+            {...rest}
+        >
+            <div className="my-dropdown-title">
+                {value ||
+                    children?.props?.children ||
+                    children?.[0]?.props?.children}
             </div>
-            <ul className="my-dropdown-list">{children}</ul>
+            {!disabled && <ul className="my-dropdown-list">{children}</ul>}
         </div>
     )
 }

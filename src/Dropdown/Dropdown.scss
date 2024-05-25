@@ -4,10 +4,8 @@
     position: relative;
 
     &:focus-within {
-        .my-dropdown-title {
-            border-color: $active-color;
-            box-shadow: 0 0 4px 1px rgba($active-color, 0.4);
-        }
+        border-color: $active-color;
+        box-shadow: 0 0 4px 1px rgba($active-color, 0.4);
     }
     
     &:not(:focus-within) {
@@ -17,26 +15,29 @@
     }
 
     &.small {
-        .my-dropdown-title,
+        height: $field-height-s;
+        font-size: $field-font-size-s;
+
         .my-dropdown-list-item {
-            height: $field-height-s;
-            font-size: $field-font-size-s;
+            min-height: $field-height-s;
         }
     }
 
     &.middle {
-        .my-dropdown-title,
+        height: $field-height-m;
+        font-size: $field-font-size-m;
+        
         .my-dropdown-list-item {
-            height: $field-height-m;
-            font-size: $field-font-size-m;
+            min-height: $field-height-m;
         }
     }
 
     &.large {
-        .my-dropdown-title,
+        height: $field-height-l;
+        font-size: $field-font-size-l;
+
         .my-dropdown-list-item {
-            height: $field-height-l;
-            font-size: $field-font-size-l;
+            min-height: $field-height-l;
         }
     }
 
@@ -48,7 +49,7 @@
         }
     }
 
-    .my-dropdown-title,
+    &,
     .my-dropdown-list {
         border: 1px solid $gray-1;
         border-radius: 4px;
@@ -58,10 +59,11 @@
     .my-dropdown-list-item {
         display: flex;
         align-items: center;
-        padding: 0 16px 0 8px;
+        padding: 0 24px 0 8px;
     }
 
     .my-dropdown-title {
+        height: 100%;
         cursor: pointer;
     }
 
@@ -79,6 +81,7 @@
 
     .my-dropdown-list-item {
         display: flex;
+        flex-wrap: wrap;
         cursor: pointer;
 
         &:not(.disabled) {

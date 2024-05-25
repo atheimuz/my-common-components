@@ -9,7 +9,7 @@ export default {
 } as Meta
 
 const Template: Story<Props> = (args) => (
-    <Dropdown>
+    <Dropdown {...args}>
         <DropdownItem {...args}>목록1</DropdownItem>
         <DropdownItem>목록2</DropdownItem>
         <DropdownItem>목록3</DropdownItem>
