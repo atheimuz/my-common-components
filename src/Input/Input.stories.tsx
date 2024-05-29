@@ -15,3 +15,25 @@ const Template: Story<Props> = (args) => {
 
 export const Default = Template.bind({})
 Default.argTypes = {}
+
+export const Addon: Story<Props> = () => {
+    return (
+        <>
+            <Input addonBefore="https://" addonAfter=".com" />
+            <br />
+            <Input
+                addonBefore={
+                    <Dropdown>
+                        <DropdownItem>http://</DropdownItem>
+                        <DropdownItem>https://</DropdownItem>
+                    </Dropdown>
+                }
+                addonAfter=".com"
+            />
+        </>
+    )
+}
+
+export const PrefixAndSuffix: Story<Props> = () => {
+    return <Input value={100} prefix="￦" suffix="원" />
+}
