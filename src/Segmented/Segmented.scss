@@ -1,8 +1,8 @@
 @import "../styles/utils";
 
 .my-segmented {
-    padding: 6px;
-    border-radius: 6px;
+    padding: 4px;
+    border-radius: 60px;
     background-color: $gray-1;
 
     .my-segmented-inner {
@@ -20,8 +20,11 @@
 
     .my-segmented-item {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex: 1;
-        padding: 12px 8px;
+        padding: 12px 12px;
+        text-align: center;
         cursor: pointer;
     }
 
@@ -30,9 +33,9 @@
         top: 0;
         left: 0;
         bottom: 0;
-        border-radius: 6px;
+        border-radius: 60px;
         background-color: $white;
-        box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.05);
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.05);
         transition: transform .3s;
     }
 }

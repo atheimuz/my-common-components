@@ -1,11 +1,14 @@
 @import "../styles/utils";
 
 .my-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 
     &:focus-within {
         border-color: $active-color;
-        box-shadow: 0 0 4px 1px rgba($active-color, 0.4);
+        box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
     }
     
     &:not(:focus-within) {
@@ -42,11 +45,9 @@
     }
 
     &.disabled {
-        .my-dropdown-title {
-            background-color: $gray-0;
-            color: $gray-3;
-            cursor: not-allowed;
-        }
+        background-color: $gray-0;
+        color: $gray-3;
+        cursor: not-allowed;
     }
 
     &,
@@ -55,18 +56,30 @@
         border-radius: 4px;
     }
 
-    .my-dropdown-title,
+    &,
     .my-dropdown-list-item {
         display: flex;
         align-items: center;
-        padding: 0 24px 0 8px;
+        padding: 0 8px;
     }
 
     .my-dropdown-title {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        flex: 1;
         height: 100%;
         cursor: pointer;
     }
 
+    .my-dropdown-btn {
+        margin-top: 4px;
+        margin-left: 8px;
+        border: 4px solid black;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
 
     .my-dropdown-list {
         overflow: hidden;
@@ -86,7 +99,7 @@
 
         &:not(.disabled) {
             &:hover {
-                background-color: $active-light-color;
+                background-color: $gray-0;
             }
         }
 

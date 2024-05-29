@@ -27,10 +27,12 @@
     }
 
     .my-pagination-btn {
-
+        cursor: pointer;
+        
         &.active {
             border: 1px solid $active-color;
             background-color: $active-light-color;
+            box-shadow: 0 0 4px 1px rgba($active-color, 0.4);
             color: $active-color;
         }
     }
