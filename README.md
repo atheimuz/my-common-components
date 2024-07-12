@@ -15,11 +15,11 @@ npm install --save my-common-components
 ```tsx
 import React, { Component } from "react"
 
-import MyComponent from "my-common-components"
+import { Button } from "my-common-components"
 
 class Example extends Component {
     render() {
-        return <MyComponent />
+        return <Button />
     }
 }
 ```
