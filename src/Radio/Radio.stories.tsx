@@ -1,36 +1,34 @@
-import React, { useState } from "react"
+import React, { ChangeEvent, useState } from "react"
 import { Story, Meta } from "@storybook/react"
 
-import Radio, { Props, RadioGroup } from "./Radio"
+import Radio, { Props } from "./Radio"
 
 export default {
     title: "Example/Radio",
     component: Radio
 } as Meta
 
-const Template: Story<Props> = ({ direction, ...args }) => {
-    const [value, setValue] = useState("yellow")
+const Template: Story<Props> = ({ ...args }) => {
+    const [value, setValue] = useState<string>("yellow")
 
     return (
-        <RadioGroup name="test" direction={direction}>
-            <Radio {...args} onClick={() => setValue("yellow")}>
+        <Radio.Group name="test" onChange={(e: ChangeEvent) => setValue(e.target.value)}>
+            <Radio {...args}>
                 노란색
             </Radio>
             <Radio
                 value="green"
                 checked={value === "green"}
-                onClick={() => setValue("green")}
             >
                 초록색
             </Radio>
             <Radio
                 value="blue"
                 checked={value === "blue"}
-                onClick={() => setValue("blue")}
             >
                 파란색
             </Radio>
-        </RadioGroup>
+        </Radio.Group >
     )
 }
 

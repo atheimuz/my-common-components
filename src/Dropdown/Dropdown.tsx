@@ -1,19 +1,20 @@
 import React from "react"
 import cx from "classnames"
+import { FaAngleDown } from "react-icons/fa";
 import "./Dropdown.scss"
 
 export interface Props {
     className?: string
-    size: "small" | "middle" | "large"
-    disabled: boolean
-    value: React.ReactNode
-    children: React.ReactNode
+    size?: "small" | "middle" | "large"
+    disabled?: boolean
+    value?: string
+    children: React.ReactNode | React.ReactNode[]
 }
 
 export interface ItemProps {
     className?: string
-    disabled: boolean
-    children: React.ReactNode
+    disabled?: boolean
+    children: React.ReactNode | React.ReactNode[]
 }
 
 const Dropdown = ({
@@ -32,9 +33,9 @@ const Dropdown = ({
         >
             <div className="my-dropdown-title">
                 {value ||
-                    children?.props?.children ||
                     children?.[0]?.props?.children}
             </div>
+            <FaAngleDown className="my-dropdown-btn" />
             {!disabled && <ul className="my-dropdown-list">{children}</ul>}
         </div>
     )
@@ -56,5 +57,7 @@ export const DropdownItem = ({
         </li>
     )
 }
+
+Dropdown.Item = DropdownItem
 
 export default Dropdown

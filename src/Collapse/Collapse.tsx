@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react"
+import { FaAngleDown } from "react-icons/fa";
 import cx from "classnames"
 import "./Collapse.scss"
 
 export interface Props {
-    className: string
+    className?: string
     children: React.ReactNode
 }
 
 export interface PanelProps {
-    className: string
+    className?: string
     title: React.ReactNode
-    active: boolean
+    active?: boolean
     children: React.ReactNode
 }
 
@@ -29,7 +30,7 @@ export const Panel = ({
     children,
     ...rest
 }: PanelProps) => {
-    const [status, setStatus] = useState(active)
+    const [status, setStatus] = useState<boolean>(active)
 
     useEffect(() => {
         setStatus(active)
@@ -42,10 +43,17 @@ export const Panel = ({
             onClick={() => setStatus(!status)}
             {...rest}
         >
-            <div className="my-panel-title">{title}</div>
+            <div className="my-panel-title">
+                {title}
+                <span className="my-panel-btn">
+                    <FaAngleDown />
+                </span>
+            </div>
             <div className="my-panel-content">{children}</div>
         </div>
     )
 }
+
+Collapse.Panel = Panel
 
 export default Collapse
