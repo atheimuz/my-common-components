@@ -31,7 +31,7 @@ class Example extends Component {
 -   Button
 -   Message
 -   Switch
--   Dropdown
+-   Select
 -   Input
 -   Radio
 -   Checkbox
@@ -39,7 +39,6 @@ class Example extends Component {
 -   Collapse
 -   Pagination
 -   Tag
--   Upload
 
 ## License
 
