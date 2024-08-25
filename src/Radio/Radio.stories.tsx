@@ -1,31 +1,32 @@
 import React, { ChangeEvent, useState } from "react";
 import { Story, Meta } from "@storybook/react";
 
-import Radio, { Props } from "./Radio";
+import Radio, { GroupProps } from "./Radio";
 
 export default {
     title: "Example/Radio",
     component: Radio,
 } as Meta;
 
-const Template: Story<Props> = ({ ...args }) => {
+const Template: Story<GroupProps> = (args) => {
     const [value, setValue] = useState<string>("yellow");
 
     return (
-        <Radio.Group
-            name="test"
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setValue(e.target.value)
-            }
-        >
-            <Radio {...args}>노란색</Radio>
-            <Radio value="green" checked={value === "green"}>
-                초록색
-            </Radio>
-            <Radio value="blue" checked={value === "blue"}>
-                파란색
-            </Radio>
-        </Radio.Group>
+        <Radio.Group {...args}>
+            {[{ label: "초록색", value: "green" }, { label: "노란색", value: "yellow" }].map(item => (
+                <Radio
+                    key={item.value}
+                    name="test"
+                    value={item.value}
+                    checked={value === item.value}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        setValue(e.target.value)
+                    }
+                >
+                    {item.label}
+                </Radio>
+            ))}
+        </Radio.Group >
     );
 };
 

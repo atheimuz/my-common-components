@@ -1,21 +1,21 @@
 import React, { useState } from "react"
 import { Story, Meta } from "@storybook/react"
 
-import Select, { OptionProps } from "./Select"
+import Select, { Props } from "./Select"
 
 export default {
     title: "Example/Select",
     component: Select
 } as Meta
 
-const Template: Story<OptionProps> = (args) => {
-    const [state, setState] = useState<number | React.ReactNode | React.ReactNode[]>(0);
+const Template: Story<Props> = () => {
+    const [state, setState] = useState<string | number>(0);
 
     return (
-        <Select {...args} value={state} onChange={({ children }) => setState(children)}>
-            <Select.Option value={0}>목록1</Select.Option>
-            <Select.Option value={1}>목록2</Select.Option>
-            <Select.Option value={2}>목록3</Select.Option>
+        <Select value={state} onChange={(newValue) => setState(newValue)}>
+            {[{ label: "목록1", value: 1 }, { label: "목록2", value: 2 }, { label: "목록1", value: 3 }].map(item => (
+                <Select.Option value={item.value}>{item.label}</Select.Option>
+            ))}
         </Select>
     )
 }
