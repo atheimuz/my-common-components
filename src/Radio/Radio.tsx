@@ -1,25 +1,28 @@
-import React, { ChangeEvent, createContext, useContext } from "react"
-import cx from "classnames"
-import "./Radio.scss"
+import React, { ChangeEvent, createContext, useContext } from "react";
+import cx from "classnames";
+import "./Radio.scss";
 
 export interface Props {
-    className?: string
-    checked?: boolean
-    disabled?: boolean
-    name?: string
-    value: string
-    children: React.ReactNode
+    className?: string;
+    checked?: boolean;
+    disabled?: boolean;
+    name?: string;
+    value: string;
+    children: React.ReactNode;
 }
 
 export interface GroupProps {
-    className?: string
-    direction?: "horizontal" | "vertical"
-    name: string
-    onChange: (e: ChangeEvent) => void
-    children: React.ReactNode | React.ReactNode[]
+    className?: string;
+    direction?: "horizontal" | "vertical";
+    name: string;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    children: React.ReactNode | React.ReactNode[];
 }
 
-const RadioContext = createContext<{ name: string, onChange: (e: ChangeEvent) => void }>({ name: "", onChange: () => { } })
+const RadioContext = createContext<{
+    name: string;
+    onChange: (e: ChangeEvent) => void;
+}>({ name: "", onChange: () => {} });
 
 const Radio = ({
     className,
@@ -47,8 +50,8 @@ const Radio = ({
             </span>
             <div>{children}</div>
         </label>
-    )
-}
+    );
+};
 
 export const RadioGroup = ({
     className,
@@ -67,9 +70,9 @@ export const RadioGroup = ({
                 {children}
             </div>
         </RadioContext.Provider>
-    )
-}
+    );
+};
 
-Radio.Group = RadioGroup
+Radio.Group = RadioGroup;
 
-export default Radio
+export default Radio;
