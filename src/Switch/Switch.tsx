@@ -3,8 +3,9 @@ import cx from "classnames"
 import "./Switch.scss"
 
 export interface Props {
-    className: string
+    className?: string
     checked: boolean
+    onClick: () => void
 }
 
 const Switch = ({ className, checked, ...rest }: Props) => {

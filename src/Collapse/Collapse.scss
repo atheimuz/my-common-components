@@ -1,12 +1,9 @@
 @import "../styles/utils";
 
-.my-collapse {
-}
-
-
 .my-panel {
     overflow: hidden;
     border-radius: 8px;
+    transition: background-color 0.3s;
     cursor: pointer;
 
     &.active {
@@ -14,10 +11,10 @@
 
         .my-panel-title {
             font-weight: 500;
+        }
 
-            &:after {
-                content: "-";
-            }
+        .my-panel-btn {
+            transform: rotate(-180deg);
         }
 
         .my-panel-content {
@@ -33,15 +30,19 @@
         position: relative;
         padding: 12px 24px 12px 12px;
         border-bottom: 1px solid $gray-1;
+    }
 
-        &:after {
-            content: "+";
-            position: absolute;
-            top: 50%;
-            right: 12px;
-            font-size: 24px;
-            transform: translateY(-50%);
-        }
+    .my-panel-btn {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 12px;
+        bottom: 0;
+        height: 100%;
+        font-size: 20px;
+        color: $gray-4;
+        transition: transform 0.3s;
     }
 
     .my-panel-content {

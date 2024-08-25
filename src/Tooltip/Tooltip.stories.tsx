@@ -9,7 +9,7 @@ export default {
 } as Meta
 
 const Template: Story<Props> = (args) => (
-    <Tooltip {...args} style={{ display: "inline-flex", margin: "100px" }}>
+    <Tooltip {...args}>
         <div>텍스트</div>
     </Tooltip>
 )

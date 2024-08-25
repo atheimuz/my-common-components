@@ -4,7 +4,7 @@ import "./Message.scss"
 
 export interface Props {
     children: any
-    className: string
+    className?: string
     type: string
 }
 

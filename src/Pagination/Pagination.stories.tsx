@@ -9,7 +9,7 @@ export default {
 } as Meta
 
 const Template: Story<Props> = ({ current, ...args }) => {
-    const [index, setIndex] = useState(current)
+    const [index, setIndex] = useState<number>(current)
     return (
         <Pagination
             {...args}

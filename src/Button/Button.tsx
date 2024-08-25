@@ -5,9 +5,9 @@ import "./Button.scss"
 export interface Props {
     children?: React.ReactNode
     className?: string
-    theme: "primary" | "secondary" | "tertiary" | "dashed" | "link"
-    size: "small" | "middle" | "large"
-    disabled: boolean
+    theme?: "primary" | "secondary" | "tertiary" | "dashed" | "link" | string
+    size?: "small" | "middle" | "large"
+    disabled?: boolean
 }
 
 const Button = ({

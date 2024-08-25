@@ -20,7 +20,7 @@ const Pagination = ({
     onChange,
     ...rest
 }: Props) => {
-    const [step, setStep] = useState(Math.ceil(current / unit))
+    const [step, setStep] = useState<number>(Math.ceil(current / unit))
     const maxStep = useMemo(() => Math.ceil(total / unit), [total, unit])
 
     return (
@@ -36,7 +36,7 @@ const Pagination = ({
                     </button>
                 </li>
             )}
-            {new Array(unit).fill(1).map((value, num) => {
+            {new Array(unit).fill(1).map((_value, num) => {
                 const displayNum = (step - 1) * unit + num + 1
 
                 if (displayNum > total) return null

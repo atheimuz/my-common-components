@@ -9,7 +9,7 @@ export default {
 } as Meta
 
 const Template: Story<Props> = ({ checked, ...rest }) => {
-    const [status, setStatus] = useState(checked)
+    const [status, setStatus] = useState<boolean>(checked)
 
     useEffect(() => {
         setStatus(checked)

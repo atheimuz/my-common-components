@@ -26,14 +26,14 @@
         font-size: 14px;
         line-height: 1.5;
         white-space: pre-wrap;
-        background-color: $black;
-        color: $white;
+        background-color: $white;
+        box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.05);
 
         &:before {
             content: "";
             display: block;
             position: absolute;
-            border: 3px solid $black;
+            border: 3px solid $white;
         }
 
         &.top {
@@ -51,7 +51,6 @@
             }
         }
 
-
         &.bottom {
             top: calc(100% + 6px);
             left: 50%;
@@ -67,8 +66,6 @@
             }
         }
 
-
-
         &.right {
             top: 50%;
             left: calc(100% + 6px);
@@ -83,8 +80,6 @@
                 border-bottom-color: transparent;
             }
         }
-
-
 
         &.left {
             top: 50%;

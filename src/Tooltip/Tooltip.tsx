@@ -18,7 +18,7 @@ const Tooltip = ({
     direction = "bottom",
     ...rest
 }: Props) => {
-    const [status, setStatus] = useState(true)
+    const [status, setStatus] = useState<boolean>(true)
 
     useEffect(() => {
         if (!status && ["keep", "hover"].indexOf(type) > -1) {

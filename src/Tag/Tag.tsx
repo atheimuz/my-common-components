@@ -5,8 +5,8 @@ import "./Tag.scss"
 export interface Props {
     children?: React.ReactNode
     className?: string
-    type: "line" | "fill"
-    color: "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "gray"
+    type?: "line" | "fill"
+    color?: "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "gray"
 }
 
 const Tag = ({

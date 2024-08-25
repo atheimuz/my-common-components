@@ -8,21 +8,21 @@ $gray-3: #bfbfbf;
 $gray-4: #777777;
 $gray-5: #484848;
 
-$red: #ff2600;
+$red: #ff5353;
 $red-light: #ff4726;
 $orange: #ff6f00;
 $orange-light: #ff8426;
 $yellow: #ffab00;
 $yellow-light: #ffb727;
-$green: #64dd18;
-$green-light: #7be33a;
+$green: #34db2d;
+$green-light: #7ce876;
 $blue: #2979ff;
 $blue-light: #4a8dff;
 $purple: #651fff;
 $purple-light: #7c40ff;
 
-$main-color: #10d25c;
-$active-color: #10d25c;
+$main-color: $green;
+$active-color: $green;
 $active-light-color: #efffe8;
 $inactive-color: $gray-1;
 $inactive-text-color: $gray-4;
