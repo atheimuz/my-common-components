@@ -16,9 +16,9 @@ export interface InputProps {
     addonAfter?: React.ReactNode | React.ReactNode[],
 }
 
-export const TextField = ({ size, children }: TextFieldProps) => {
+export const TextField = ({ size, children, ...rest }: TextFieldProps) => {
     return (
-        <div className={cx("my-input-wrapper", size)}>
+        <div className={cx("my-input-wrapper", size)} {...rest}>
             {children}
         </div>
     )
@@ -32,7 +32,7 @@ export const Addon = ({ children }: { children: React.ReactNode }) => {
     return <div className="my-input-addon">{children}</div>
 }
 
-export const ErrorMsg = ({ children }: { children: React.ReactNode }) => {
+export const Error = ({ children }: { children: React.ReactNode }) => {
     return <div className="my-input-error">{children}</div>
 }
 
@@ -60,6 +60,6 @@ const Input = ({
 TextField.Label = Label
 TextField.Input = Input
 TextField.Addon = Addon
-TextField.ErrorMsg = ErrorMsg
+TextField.Error = Error
 
 export default TextField
