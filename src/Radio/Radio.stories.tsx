@@ -12,16 +12,18 @@ const Template: Story<GroupProps> = (args) => {
     const [value, setValue] = useState<string>("yellow");
 
     return (
-        <Radio.Group {...args}>
+        <Radio.Group
+            {...args}
+            value={value}
+            name="test"
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setValue(e.target.value)
+            }
+        >
             {[{ label: "초록색", value: "green" }, { label: "노란색", value: "yellow" }].map(item => (
                 <Radio
                     key={item.value}
-                    name="test"
                     value={item.value}
-                    checked={value === item.value}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                        setValue(e.target.value)
-                    }
                 >
                     {item.label}
                 </Radio>

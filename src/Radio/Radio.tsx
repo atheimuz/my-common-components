@@ -1,33 +1,39 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, createContext, useContext } from "react";
 import cx from "classnames";
 import "./Radio.scss";
 
 export interface Props {
     className?: string;
-    checked?: boolean;
     disabled?: boolean;
-    name: string;
-    value: string;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    value: string | number;
     children: React.ReactNode;
+    [key: string]: any
 }
 
 export interface GroupProps {
     className?: string;
+    value: Props["value"];
+    name: string;
     direction?: "horizontal" | "vertical";
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     children: React.ReactNode | React.ReactNode[];
 }
+
+const RadioContext = createContext<{
+    selectedValue: Props["value"];
+    name: string;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}>({ selectedValue: "", name: "", onChange: () => { } });
 
 const Radio = ({
     className,
     value,
-    name,
-    checked,
     disabled,
-    onChange,
     children,
     ...rest
 }: Props) => {
+    const { selectedValue, name, onChange } = useContext(RadioContext);
+
     return (
         <label className={cx("my-radio", className, { disabled })}>
             <span className="my-radio-target">
@@ -35,11 +41,11 @@ const Radio = ({
                     type="radio"
                     value={value}
                     name={name}
-                    checked={checked}
+                    checked={selectedValue === value}
                     disabled={disabled}
                     onChange={onChange}
-                    {...rest}
                     hidden
+                    {...rest}
                 />
                 <span className="my-radio-target-circle" />
             </span>
@@ -50,18 +56,22 @@ const Radio = ({
 
 export const RadioGroup = ({
     className,
+    value,
+    name,
     direction = "horizontal",
+    onChange,
     children,
     ...rest
 }: GroupProps) => {
-
     return (
-        <div
-            className={cx("my-radio-group", className, direction)}
-            {...rest}
-        >
-            {children}
-        </div>
+        <RadioContext.Provider value={{ selectedValue: value, name, onChange }}>
+            <div
+                className={cx("my-radio-group", className, direction)}
+                {...rest}
+            >
+                {children}
+            </div>
+        </RadioContext.Provider>
     );
 };
 

@@ -9,11 +9,14 @@ export default {
 } as Meta
 
 const Template: Story<Props> = () => {
-    const [state, setState] = useState<string | number>(0);
+    const [state, setState] = useState<string | number>(1);
 
     return (
-        <Select value={state} onChange={(newValue) => setState(newValue)}>
-            {[{ label: "목록1", value: 1 }, { label: "목록2", value: 2 }, { label: "목록1", value: 3 }].map(item => (
+        <Select
+            value={state}
+            renderedValue={<>선택한 값은 {state}</>}
+            onChange={(newValue) => setState(newValue)}>
+            {[{ label: "목록1", value: 1 }, { label: "목록2", value: 2 }, { label: "목록3", value: 3 }].map(item => (
                 <Select.Option value={item.value}>{item.label}</Select.Option>
             ))}
         </Select>
