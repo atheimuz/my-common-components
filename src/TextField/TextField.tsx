@@ -9,11 +9,11 @@ export interface TextFieldProps {
 export interface InputProps {
     className?: string
     placeholder?: string
-    value?: string | number
     type?: "text" | "number" | "email" | "password"
     status?: "default" | "success" | "error"
     addonBefore?: React.ReactNode | React.ReactNode[],
     addonAfter?: React.ReactNode | React.ReactNode[],
+    [key: string]: any
 }
 
 export const TextField = ({ size, children, ...rest }: TextFieldProps) => {
