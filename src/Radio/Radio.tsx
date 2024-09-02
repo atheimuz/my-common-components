@@ -1,43 +1,46 @@
-import React, { ChangeEvent, createContext, useContext } from "react";
+import React, { ChangeEvent, createContext, Ref, useContext } from "react";
 import cx from "classnames";
 import "./Radio.scss";
 
-export interface Props {
+export interface ItemProps {
     className?: string;
     disabled?: boolean;
-    value: string | number;
+    value: string;
     children: React.ReactNode;
     [key: string]: any
 }
 
 export interface GroupProps {
     className?: string;
-    value: Props["value"];
+    value: string;
     name: string;
     direction?: "horizontal" | "vertical";
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     children: React.ReactNode | React.ReactNode[];
+    [key: string]: any
 }
 
 const RadioContext = createContext<{
-    selectedValue: Props["value"];
+    selectedValue: string;
     name: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }>({ selectedValue: "", name: "", onChange: () => { } });
 
-const Radio = ({
+
+const RadioItem = React.forwardRef(({
     className,
     value,
     disabled,
     children,
     ...rest
-}: Props) => {
+}: ItemProps, forwardRef: Ref<HTMLInputElement>) => {
     const { selectedValue, name, onChange } = useContext(RadioContext);
 
     return (
         <label className={cx("my-radio", className, { disabled })}>
             <span className="my-radio-target">
                 <input
+                    ref={forwardRef}
                     type="radio"
                     value={value}
                     name={name}
@@ -52,7 +55,7 @@ const Radio = ({
             <div>{children}</div>
         </label>
     );
-};
+});
 
 export const RadioGroup = ({
     className,
@@ -75,6 +78,13 @@ export const RadioGroup = ({
     );
 };
 
+const Radio = React.forwardRef as unknown as ((
+) => React.ReactElement) & {
+    Item: typeof RadioItem;
+    Group: typeof RadioGroup;
+};
+
+Radio.Item = RadioItem;
 Radio.Group = RadioGroup;
 
 export default Radio;

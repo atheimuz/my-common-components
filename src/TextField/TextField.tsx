@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef, Ref } from "react"
 import cx from "classnames"
 import "./TextField.scss"
 
@@ -36,18 +36,19 @@ export const Error = ({ children }: { children: React.ReactNode }) => {
     return <div className="my-input-error">{children}</div>
 }
 
-const Input = ({
+const Input = forwardRef<HTMLInputElement, InputProps>(({
     className = "",
     addonBefore,
     addonAfter,
     type = "text",
     status = "default",
     ...rest
-}: InputProps) => {
+}: InputProps, ref: Ref<HTMLInputElement>) => {
     return (
         <div className={cx("my-input-inner", status)}>
             {addonBefore && <div className="my-input-addon-before">{addonBefore}</div>}
             <input
+                ref={ref}
                 type={type}
                 className={cx("my-input", className)}
                 {...rest}
@@ -55,7 +56,7 @@ const Input = ({
             {addonAfter && <div className="my-input-addon-after">{addonAfter}</div>}
         </div>
     )
-}
+})
 
 TextField.Label = Label
 TextField.Input = Input
