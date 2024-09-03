@@ -1,0 +1,15 @@
+@import "../styles/utils";
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.my-spinner {
+    font-size: inherit;
+    animation: rotate 1.5s linear infinite;
+}
