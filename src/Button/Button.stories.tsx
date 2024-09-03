@@ -31,9 +31,8 @@ export const Theme: Story<Props> = () => {
                     style={{ display: "flex", marginBottom: "10px" }}
                 >
                     <Button
+                        key={theme}
                         theme={theme}
-                        key={index}
-                        // style={{ marginRight: "15px" }}
                     >
                         {theme}
                     </Button>

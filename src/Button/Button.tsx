@@ -1,13 +1,15 @@
 import React from "react"
 import cx from "classnames"
 import "./Button.scss"
+import Spinner from "../Spinner"
 
 export interface Props {
-    children?: React.ReactNode
-    className?: string
-    theme?: "primary" | "secondary" | "tertiary" | "dashed" | "link" | string
-    size?: "small" | "middle" | "large"
-    disabled?: boolean
+    children: React.ReactNode,
+    className?: string,
+    theme?: "primary" | "secondary" | "tertiary" | "dashed" | "link" | string,
+    size?: "small" | "middle" | "large",
+    disabled?: boolean,
+    isLoading?: boolean
 }
 
 const Button = ({
@@ -16,6 +18,7 @@ const Button = ({
     theme = "primary",
     size = "middle",
     disabled = false,
+    isLoading = false,
     ...rest
 }: Props) => {
     return (
@@ -25,7 +28,7 @@ const Button = ({
             disabled={disabled}
             {...rest}
         >
-            <div>{children}</div>
+            {isLoading ? <Spinner /> : children}
         </button>
     )
 }
