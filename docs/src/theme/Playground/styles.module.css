@@ -1,0 +1,22 @@
+.playgroundContainer {
+    margin-bottom: 12px;
+}
+
+.playgroundEditor {
+    font-family: "SF Mono", Menlo, monospace;
+}
+
+.playgroundPreview {
+    margin-bottom: 20px;
+    padding: 1rem;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+}
+
+.playgroundHeader {
+    padding: 1rem;
+    border-bottom: 1px solid;
+    background-color: rgb(40, 42, 54);
+    border-color: #ebebeb;
+    color: white;
+}
