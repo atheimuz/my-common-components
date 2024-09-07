@@ -3,6 +3,9 @@
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "@my-common-components/react": ["../packages/react"]
+    }
   }
 }
