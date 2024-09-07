@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save my-common-components
+npm install --save my-common-components/react
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save my-common-components
 ```tsx
 import React, { Component } from "react"
 
-import { Button } from "my-common-components"
+import { Button } from "my-common-components/react"
 
 class Example extends Component {
     render() {
@@ -28,12 +28,13 @@ class Example extends Component {
 
 [스토리북 링크](https://atheimuz.github.io/my-common-components/storybook-static)
 
+-   Alert
 -   Button
 -   Message
 -   Switch
 -   Select
 -   Input
--   Radio
+-   RadioGroup
 -   Checkbox
 -   Tooltip
 -   Collapse

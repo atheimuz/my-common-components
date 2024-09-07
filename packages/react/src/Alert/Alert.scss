@@ -32,8 +32,10 @@
 }
 
 .my-alert-close-btn {
+    display: flex;
+    align-items: center;
     padding: 4px;
     border: none;
-    font-size: 18px;
+    font-size: 20px;
     background-color: transparent;
 }

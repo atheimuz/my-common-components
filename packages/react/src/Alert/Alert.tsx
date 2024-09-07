@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from "react"
 import cx from "classnames"
+import { AiOutlineClose } from "react-icons/ai";
 import Overlay from "../Overlay"
 import "./Alert.scss"
 
@@ -12,7 +13,7 @@ export interface Props {
 
 type AlertContextType = {
     onClose?: () => void;
-};
+} | null;
 
 const AlertContext = createContext<AlertContextType>({})
 const Alert = ({ className, children, isOpen, onClose, ...rest }: Props) => {
@@ -58,7 +59,10 @@ const Footer = ({ children }: { children: React.ReactNode }) => {
 
 
 const CloseBtn = () => {
-    const { onClose } = useContext(AlertContext);
+    const context = useContext(AlertContext);
+
+    if (!context) return null;
+    const { onClose } = context;
 
     return (
         <button
@@ -67,7 +71,7 @@ const CloseBtn = () => {
             aria-label="닫기"
             onClick={onClose}
         >
-            X
+            <AiOutlineClose />
         </button>
     )
 }
