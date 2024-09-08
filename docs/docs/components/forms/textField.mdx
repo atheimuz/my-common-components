@@ -1,0 +1,61 @@
+---
+sidebar_position: 2
+---
+
+# TextField
+
+TextField는 사용자 입력을 받는 데 사용되는 구성요소입니다.
+
+## Import
+
+```jsx
+import { TextField } from "my-common-components/react"
+```
+
+## 사용
+
+```jsx live
+function Example() {
+    const [value, setValue] = useState("홍길동")
+    return (
+        <TextField label="이름">
+            <TextField.Input
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+            />
+        </TextField>
+    )
+}
+```
+
+## 상태
+
+`status` prop에 값을 전달하여 상태를 변경합니다.
+
+`default`, `success`, `error`
+
+```jsx live
+<FlexRow>
+    <TextField label="default">
+        <TextField.Input status="default" />
+    </TextField>
+    <TextField label="success">
+        <TextField.Input status="success" />
+    </TextField>
+    <TextField label="error">
+        <TextField.Input status="error" />
+    </TextField>
+</FlexRow>
+```
+
+## 에러
+
+`errorMsg` prop에 값을 전달하여 에러 메시지를 표시합니다.
+
+```jsx live
+<FlexRow>
+    <TextField label="이메일" errorMsg="필수 항목입니다.">
+        <TextField.Input status="error" />
+    </TextField>
+</FlexRow>
+```

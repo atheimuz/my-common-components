@@ -1,0 +1,82 @@
+---
+sidebar_position: 1
+---
+
+# Alert
+
+Alert은 필수 확인이나 작업을 통해 사용자의 작업을 중단시키는 데 사용됩니다.
+
+## Import
+
+```jsx
+import { Alert } from "my-common-components/react"
+```
+
+## 사용
+
+```jsx live
+function Example() {
+    const [isOpen, setIsOpen] = useState(false)
+    return (
+        <>
+            <Button onClick={() => setIsOpen(true)}>Open alert</Button>
+            <Alert isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                <Alert.Header>
+                    header title
+                    <Alert.CloseBtn />
+                </Alert.Header>
+                <Alert.Content>content</Alert.Content>
+                <Alert.Footer>
+                    <Button theme="tertiary">취소</Button>
+                    <Button>확인</Button>
+                </Alert.Footer>
+            </Alert>
+        </>
+    )
+}
+```
+
+## 위치
+
+`position` prop에 값을 전달하여 위치를 변경합니다.
+
+`center`, `top`, `bottom`, `left`, `right`
+
+```jsx live
+function Example() {
+    const [isOpen, setIsOpen] = useState(false)
+    const [position, setPosition] = useState("center")
+
+    return (
+        <>
+            <RadioGroup
+                style={{ marginBottom: "20px" }}
+                value={position}
+                onChange={(e) => setPosition(e.target.value)}
+            >
+                <RadioGroup.Item value="center">center</RadioGroup.Item>
+                <RadioGroup.Item value="top">top</RadioGroup.Item>
+                <RadioGroup.Item value="bottom">bottom</RadioGroup.Item>
+                <RadioGroup.Item value="left">left</RadioGroup.Item>
+                <RadioGroup.Item value="right">right</RadioGroup.Item>
+            </RadioGroup>
+            <Button onClick={() => setIsOpen(true)}>Open Alert</Button>
+            <Alert
+                isOpen={isOpen}
+                position={position}
+                onClose={() => setIsOpen(false)}
+            >
+                <Alert.Header>
+                    header title
+                    <Alert.CloseBtn />
+                </Alert.Header>
+                <Alert.Content>content</Alert.Content>
+                <Alert.Footer>
+                    <Button theme="tertiary">취소</Button>
+                    <Button>확인</Button>
+                </Alert.Footer>
+            </Alert>
+        </>
+    )
+}
+```

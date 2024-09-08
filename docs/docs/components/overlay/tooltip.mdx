@@ -1,0 +1,74 @@
+---
+sidebar_position: 2
+---
+
+# Tooltip
+
+Tooltip은 사용자가 요소와 상호작용할 때 나타나는 간단하고 유익한 메시지입니다.
+
+## Import
+
+```jsx
+import { Tooltip } from "my-common-components/react"
+```
+
+## 사용
+
+```jsx live
+<Tooltip title="Hi" type="hover">
+    Hover here
+</Tooltip>
+```
+
+## 타입
+
+`type` prop에 값을 전달하여 보여주는 방식을 변경합니다.
+
+`hover`, `keep`, `click`
+
+#### hover
+
+```jsx live
+<Tooltip title="Hi" type="hover">
+    Hover
+</Tooltip>
+```
+
+#### keep
+
+```jsx live
+<Tooltip title="Hi" type="keep">
+    Keep
+</Tooltip>
+```
+
+#### click
+
+```jsx live
+<Tooltip title="Hi" type="click">
+    Click
+</Tooltip>
+```
+
+## 방향
+
+`direction` prop에 값을 전달하여 방향을 변경합니다.
+
+`top`, `bottom`, `left`, `right`
+
+```jsx live
+<FlexRow>
+    <Tooltip title="Hi" direction="top">
+        <Button>Top</Button>
+    </Tooltip>
+    <Tooltip title="Hi" direction="bottom">
+        <Button>Bottom</Button>
+    </Tooltip>
+    <Tooltip title="Hi" direction="left">
+        <Button>Left</Button>
+    </Tooltip>
+    <Tooltip title="Hi" direction="right">
+        <Button>Right</Button>
+    </Tooltip>
+</FlexRow>
+```

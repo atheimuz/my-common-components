@@ -1,0 +1,56 @@
+---
+sidebar_position: 2
+---
+
+# RadioGroup
+
+RadioGroup은 여러 옵션 중에서 단 하나의 선택 사항만 선택할 수 있을 때 사용됩니다.
+
+## Import
+
+```jsx
+import { RadioGroup } from "my-common-components/react"
+```
+
+## 사용
+
+```jsx live
+function Example() {
+    const [value, setValue] = useState("red")
+    return (
+        <RadioGroup
+            name="color"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+        >
+            <RadioGroup.Item value="red">빨강</RadioGroup.Item>
+            <RadioGroup.Item value="yellow">노랑</RadioGroup.Item>
+            <RadioGroup.Item value="green">초록</RadioGroup.Item>
+        </RadioGroup>
+    )
+}
+```
+
+## 방향
+
+`direction` prop에 값을 전달하여 위치를 변경합니다.
+
+`horizontal`, `vertical`
+
+#### horizontal
+
+```jsx live
+<RadioGroup name="radioA" value="red" direction="horizontal">
+    <RadioGroup.Item value="red">빨강</RadioGroup.Item>
+    <RadioGroup.Item value="yellow">노랑</RadioGroup.Item>
+</RadioGroup>
+```
+
+#### vertical
+
+```jsx live
+<RadioGroup name="radioB" value="red" direction="vertical">
+    <RadioGroup.Item value="red">빨강</RadioGroup.Item>
+    <RadioGroup.Item value="yellow">노랑</RadioGroup.Item>
+</RadioGroup>
+```

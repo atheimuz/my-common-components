@@ -1,0 +1,31 @@
+---
+sidebar_position: 5
+---
+
+# Switch
+
+Switch는 체크박스의 대안으로 사용됩니다.
+
+## Import
+
+```jsx
+import { Switch } from "my-common-components/react"
+```
+
+## Usage
+
+```jsx live
+function Example() {
+    const [status, setStatus] = useState(false)
+    return <Switch checked={status} onChange={() => setStatus(!status)} />
+}
+```
+
+## 비활성화
+
+```jsx live
+<>
+    <Switch checked disabled />
+    <Switch disabled />
+</>
+```

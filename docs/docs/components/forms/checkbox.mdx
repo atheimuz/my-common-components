@@ -1,0 +1,37 @@
+---
+sidebar_position: 4
+---
+
+# Checkbox
+
+Checkbox는 사용자가 여러 옵션에서 여러 값을 선택해야 할 때 양식에서 사용됩니다.
+
+## Import
+
+```jsx
+import { Checkbox } from "my-common-components/react"
+```
+
+## Usage
+
+```jsx live
+function Example() {
+    const [status, setStatus] = useState(false)
+    return (
+        <Checkbox checked={status} onChange={() => setStatus(!status)}>
+            동의
+        </Checkbox>
+    )
+}
+```
+
+## 비활성화
+
+```jsx live
+<>
+    <Checkbox checked disabled>
+        동의
+    </Checkbox>
+    <Checkbox disabled>동의</Checkbox>
+</>
+```

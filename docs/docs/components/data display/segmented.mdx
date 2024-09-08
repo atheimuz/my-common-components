@@ -1,0 +1,28 @@
+---
+sidebar_position: 2
+---
+
+# Segmented
+
+Segmented는 여러 옵션을 표시하고 사용자가 단일 옵션을 선택할 수 있도록 합니다.
+
+## Import
+
+```jsx
+import { Segmented } from "my-common-components/react"
+```
+
+## 사용
+
+```jsx live
+function Example() {
+    const [value, setValue] = useState(false)
+    return (
+        <Segmented value={value} onChange={(val) => setValue(val)}>
+            <Segmented.Item value={1}>예시1</Segmented.Item>
+            <Segmented.Item value={2}>예시2</Segmented.Item>
+            <Segmented.Item value={3}>예시3</Segmented.Item>
+        </Segmented>
+    )
+}
+```
