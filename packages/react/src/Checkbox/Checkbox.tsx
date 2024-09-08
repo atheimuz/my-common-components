@@ -1,13 +1,12 @@
-import React from "react"
+import React, { InputHTMLAttributes } from "react"
 import cx from "classnames"
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa"
 import "./Checkbox.scss"
 
-export interface Props {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode
     className?: string
     checked: boolean
-    disabled: boolean
 }
 
 const Checkbox = ({ children, className = "", ...rest }: Props) => {

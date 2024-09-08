@@ -1,9 +1,31 @@
 @import "../styles/utils";
 
 .my-alert {
+    position: relative;
     width: 400px;
     border-radius: 10px;
     background-color: $white;
+    transition: translateX 0.3s translateY 0.3s;
+
+    &.top {
+        align-self: flex-start;
+        transform: translateY(10%);
+    }
+
+    &.bottom {
+        align-self: flex-end;
+        transform: translateY(-10%);
+    }
+
+    &.left {
+        margin-right: auto;
+        transform: translateX(10%);
+    }
+
+    &.right {
+        margin-left: auto;
+        transform: translateX(-10%);
+    }
 }
 
 .my-alert-header {

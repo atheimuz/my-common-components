@@ -1,11 +1,10 @@
-import React from "react"
+import React, { InputHTMLAttributes } from "react"
 import cx from "classnames"
 import "./Switch.scss"
 
-export interface Props {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     className?: string
     checked: boolean
-    onClick: () => void
 }
 
 const Switch = ({ className, checked, ...rest }: Props) => {

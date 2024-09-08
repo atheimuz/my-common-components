@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import cx from "classnames"
+import { AiOutlineClose } from "react-icons/ai";
 import "./Tooltip.scss"
 
 export interface Props {
@@ -14,7 +15,7 @@ const Tooltip = ({
     children,
     className = "",
     title,
-    type = "keep",
+    type = "hover",
     direction = "bottom",
     ...rest
 }: Props) => {
@@ -39,7 +40,7 @@ const Tooltip = ({
                             className="my-tooltip-close-btn"
                             onClick={() => setStatus(false)}
                         >
-                            X
+                            <AiOutlineClose />
                         </button>
                     )}
                 </div>

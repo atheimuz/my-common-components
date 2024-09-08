@@ -8,6 +8,7 @@ export interface Props {
     children: React.ReactNode
     className?: string
     isOpen: boolean
+    position?: "top" | "left" | "right" | "bottom" | "center"
     onClose?: () => void
 }
 
@@ -16,14 +17,14 @@ type AlertContextType = {
 } | null;
 
 const AlertContext = createContext<AlertContextType>({})
-const Alert = ({ className, children, isOpen, onClose, ...rest }: Props) => {
+const Alert = ({ className, children, isOpen, position, onClose, ...rest }: Props) => {
     if (!isOpen) return null;
 
     return (
         <AlertContext.Provider value={{ onClose }}>
             <Overlay>
                 <div
-                    className={cx("my-alert", className)}
+                    className={cx("my-alert", className, position)}
                     {...rest}
                 >
                     {children}

@@ -9,19 +9,13 @@ export default {
 } as Meta
 
 const Template: Story<ItemProps> = () => {
-    const [index, setIndex] = useState<number>(0)
+    const [value, setValue] = useState<number>(1)
 
     return (
-        <Segmented index={index}>
-            <Segmented.Item onClick={() => setIndex(0)}>
-                목록1
-            </Segmented.Item>
-            <Segmented.Item onClick={() => setIndex(1)}>
-                목록2
-            </Segmented.Item>
-            <Segmented.Item onClick={() => setIndex(2)}>
-                목록3
-            </Segmented.Item>
+        <Segmented value={value} onChange={(val) => setValue(val as number)}>
+            <Segmented.Item value={1}>목록1</Segmented.Item>
+            <Segmented.Item value={2}>목록2</Segmented.Item>
+            <Segmented.Item value={3}>목록3</Segmented.Item>
         </Segmented>
     )
 }
