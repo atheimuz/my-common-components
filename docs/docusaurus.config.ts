@@ -8,14 +8,14 @@ const config: Config = {
     favicon: "img/favicon.ico",
 
     // Set the production url of your site here
-    url: "https://your-docusaurus-site.example.com",
+    url: "https://atheimuz.github.io",
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: "/",
+    baseUrl: "/my-common-components",
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: "facebook", // Usually your GitHub org/user name.
+    organizationName: "atheimuz", // Usually your GitHub org/user name.
     projectName: "docusaurus", // Usually your repo name.
 
     onBrokenLinks: "throw",
@@ -78,65 +78,16 @@ const config: Config = {
                     position: "left",
                     label: "Tutorial"
                 },
-                { to: "/blog", label: "Blog", position: "left" },
                 {
-                    href: "https://github.com/facebook/docusaurus",
+                    href: "https://github.com/atheimuz/my-common-components",
                     label: "GitHub",
                     position: "right"
                 }
             ]
         },
-        footer: {
-            style: "dark",
-            links: [
-                {
-                    title: "Docs",
-                    items: [
-                        {
-                            label: "Tutorial",
-                            to: "/docs/intro"
-                        }
-                    ]
-                },
-                {
-                    title: "Community",
-                    items: [
-                        {
-                            label: "Stack Overflow",
-                            href: "https://stackoverflow.com/questions/tagged/docusaurus"
-                        },
-                        {
-                            label: "Discord",
-                            href: "https://discordapp.com/invite/docusaurus"
-                        },
-                        {
-                            label: "Twitter",
-                            href: "https://twitter.com/docusaurus"
-                        }
-                    ]
-                },
-                {
-                    title: "More",
-                    items: [
-                        {
-                            label: "Blog",
-                            to: "/blog"
-                        },
-                        {
-                            label: "GitHub",
-                            href: "https://github.com/facebook/docusaurus"
-                        }
-                    ]
-                }
-            ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
-        },
         prism: {
             theme: prismThemes.nightOwl,
             darkTheme: prismThemes.nightOwl
-        },
-        liveCodeBlock: {
-            playgroundPosition: "top"
         }
     } satisfies Preset.ThemeConfig
 }
