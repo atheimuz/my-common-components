@@ -1,17 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "ESNext",
-    "jsx": "react",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
-      "*": ["./node_modules/*", "./packages/*"]
-    }
-  },
-  "include": ["src"]
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "ESNext",
+        "jsx": "react",
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "."
+    },
+    "include": ["src"]
 }

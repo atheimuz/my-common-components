@@ -1,7 +1,5 @@
 {
-    "name": "my-common-components",
-    "private": true,
-    "packageManager": "yarn@4.4.1",
+    "packageManager": "yarn@4.1.1",
     "workspaces": [
         "packages/react",
         "docs"

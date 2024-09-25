@@ -32,15 +32,21 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: "ts-loader",
-                exclude: /node_modules/
+                use: {
+                    loader: "ts-loader",
+                    options: {
+                        transpileOnly: true, // 타입 검사 속도 향상
+                        configFile: "tsconfig.json",
+                    },
+                },
+                exclude: /(^|[/\\])(dist|build)/, // 빌드 폴더 제외
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
-                }
+                    loader: "babel-loader",
+                },
+                exclude: /(^|[/\\])(dist|build)/, // 빌드 폴더 제외
             },
             {
                 test: /\.css$/, // CSS 파일 처리
