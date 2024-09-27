@@ -1,0 +1,40 @@
+@import "../../styles/utils";
+
+.my-tab {
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-bottom: 1px solid $border-color;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
+
+    .my-tab-items {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 0;
+        width: max-content;
+        margin: 0;
+        padding-inline-start: 0;
+    }
+
+    .my-tab-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 12px 12px;
+        text-align: center;
+        border: none;
+        border-bottom: 1px solid transparent;
+        background-color: transparent;
+        cursor: pointer;
+
+        &.active {
+            border-bottom-color: black;
+        }
+    }
+}
