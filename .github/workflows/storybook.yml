@@ -25,11 +25,11 @@ jobs:
 
             - name: Build Storybook
               run: yarn build-storybook -o storybook-static
-              working-directory: ./packages/react
+              working-directory: packages/react
 
             - name: Deploy Storybook to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./packages/react/storybook-static
+                  publish_dir: packages/react/storybook-static
                   destination_dir: ""
