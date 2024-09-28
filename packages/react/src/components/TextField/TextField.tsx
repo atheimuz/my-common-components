@@ -3,52 +3,73 @@ import cx from "classnames"
 import "./TextField.scss"
 
 export interface TextFieldProps {
-    size?: "small" | "middle" | "large" | undefined
     label?: React.ReactNode
     errorMsg?: React.ReactNode
+    className?: string
     children: React.ReactNode | React.ReactNode[]
 }
-export interface InputProps {
+export interface InputProps
+    extends React.InputHTMLAttributes<HTMLInputElement> {
     className?: string
-    placeholder?: string
     type?: "text" | "number" | "email" | "password"
+    size?: "small" | "middle" | "large"
     status?: "default" | "success" | "error"
-    [key: string]: any
+    round?: boolean
+    children?: React.ReactNode
 }
 
-export const TextField = ({ size = "middle", children, label, errorMsg, ...rest }: TextFieldProps) => {
+export const TextField = ({
+    className,
+    children,
+    label,
+    errorMsg,
+    ...rest
+}: TextFieldProps) => {
     return (
-        <div className={cx("my-input-wrapper", size)} {...rest}>
+        <div className={cx("my-input-wrapper", className)} {...rest}>
             {label && <div className="my-input-label">{label}</div>}
             {children}
-            {errorMsg && (
-                <div className="my-input-error">{errorMsg}</div>
-            )}
+            {errorMsg && <div className="my-input-error">{errorMsg}</div>}
         </div>
     )
 }
 
-export const Addon = ({ children }: { children: React.ReactNode }) => {
-    return <div className="my-input-addon">{children}</div>
+export const Addon = ({
+    position = "before",
+    children
+}: {
+    position?: "before" | "after"
+    children: React.ReactNode
+}) => {
+    return <div className={cx("my-input-addon", position)}>{children}</div>
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({
-    className = "",
-    type = "text",
-    status = "default",
-    ...rest
-}: InputProps, ref: Ref<HTMLInputElement>) => {
-    return (
-        <div className={cx("my-input-inner", status)}>
-            <input
-                ref={ref}
-                type={type}
-                className={cx("my-input", className)}
-                {...rest}
-            />
-        </div>
-    )
-})
+const Input = forwardRef<HTMLInputElement, InputProps>(
+    (
+        {
+            className = "",
+            type = "text",
+            size = "middle",
+            status = "default",
+            round,
+            children,
+            ...rest
+        }: InputProps,
+        ref: Ref<HTMLInputElement>
+    ) => {
+        return (
+            <div className={cx("my-input-inner", size, status, { round })}>
+                <input
+                    ref={ref}
+                    type={type}
+                    className={cx("my-input", className)}
+                    {...rest}
+                />
+                {children}
+            </div>
+        )
+    }
+)
 
 TextField.Input = Input
 TextField.Addon = Addon
