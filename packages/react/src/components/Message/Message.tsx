@@ -3,14 +3,14 @@ import cx from "classnames"
 import "./Message.scss"
 
 export interface Props {
-    children: any
+    children: React.ReactNode
     className?: string
-    type: string
+    color?: "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "gray"
 }
 
-const Message = ({ children, className, type = "receive" }: Props) => {
+const Message = ({ children, className, color = "gray" }: Props) => {
     return (
-        <div className={cx("my-message", className, type)}>
+        <div className={cx("my-message", className, color)}>
             <div className="my-message-content">{children}</div>
         </div>
     )

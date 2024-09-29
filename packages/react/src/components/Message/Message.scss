@@ -1,45 +1,52 @@
 @import "../../styles/utils";
 
 .my-message {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
     align-items: center;
     position: relative;
-    padding: 7px 10px 6px;
-    border-radius: 20px;
-    color: $text-color;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 13px;
 
-    &.send {
-        align-self: flex-end;
-        border-bottom-right-radius: 0;
-        background-color: $main-color;
-        color: $white;
-
-        & + .send {
-            margin-top: 2px;
-        }
-
-        & + .receive {
-            margin-top: 6px;
-        }
-    }
-
-    &.receive {
-        align-self: end;
-        border-bottom-left-radius: 0;
+    &.gray {
+        border-color: $gray-1;
         background-color: $gray-1;
-
-        & + .receive {
-            margin-top: 2px;
-        }
-
-        & + .send {
-            margin-top: 6px;
-        }
+        color: $gray-4;
     }
 
-    .my-message-content {
-        word-break: break-all;
-        white-space: pre-wrap;
+    &.red {
+        border-color: $red-lightest;
+        background-color: $red-lightest;
+        color: $red;
+    }
+
+    &.orange {
+        border-color: $orange-lightest;
+        background-color: $orange-lightest;
+        color: $orange;
+    }
+
+    &.yellow {
+        border-color: $yellow-lightest;
+        background-color: $yellow-lightest;
+        color: $yellow;
+    }
+
+    &.green {
+        border-color: $green-lightest;
+        background-color: $green-lightest;
+        color: $green;
+    }
+
+    &.blue {
+        border-color: $blue-lightest;
+        background-color: $blue-lightest;
+        color: $blue;
+    }
+
+    &.purple {
+        border-color: $purple-lightest;
+        background-color: $purple-lightest;
+        color: $purple;
     }
 }
