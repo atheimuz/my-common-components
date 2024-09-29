@@ -15,7 +15,7 @@ npm install --save my-common-components/react
 ```tsx
 import React, { Component } from "react"
 
-import { Button } from "my-common-components/react"
+import { Button } from "@atheimuz/react-ui"
 
 class Example extends Component {
     render() {
@@ -26,7 +26,7 @@ class Example extends Component {
 
 ## 컴포넌트
 
-[스토리북 링크](https://atheimuz.github.io/my-common-components/storybook-static)
+[스토리북 링크](https://atheimuz.github.io/my-common-components/)
 
 -   Alert
 -   Button
