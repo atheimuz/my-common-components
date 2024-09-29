@@ -223,33 +223,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atheimuz/docs@workspace:docs":
-  version: 0.0.0-use.local
-  resolution: "@atheimuz/docs@workspace:docs"
-  dependencies:
-    "@atheimuz/react-ui": "workspace:^"
-    "@docusaurus/core": "npm:3.5.2"
-    "@docusaurus/module-type-aliases": "npm:3.5.2"
-    "@docusaurus/plugin-content-docs": "npm:^3.5.2"
-    "@docusaurus/preset-classic": "npm:3.5.2"
-    "@docusaurus/theme-common": "npm:^3.5.2"
-    "@docusaurus/theme-live-codeblock": "npm:^3.5.2"
-    "@docusaurus/tsconfig": "npm:3.5.2"
-    "@docusaurus/types": "npm:3.5.2"
-    "@mdx-js/react": "npm:^3.0.0"
-    "@types/react": "npm:^18.3.0"
-    "@types/react-dom": "npm:^18.3.0"
-    clsx: "npm:^2.0.0"
-    npm-run-all: "npm:^4.1.5"
-    prism-react-renderer: "npm:^2.3.0"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    react-live: "npm:^4.1.7"
-    typescript: "npm:~5.5.2"
-  languageName: unknown
-  linkType: soft
-
-"@atheimuz/react-ui@workspace:^, @atheimuz/react-ui@workspace:packages/react":
+"@atheimuz/react-ui@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@atheimuz/react-ui@workspace:packages/react"
   dependencies:
@@ -2011,7 +1985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-docs@npm:3.5.2, @docusaurus/plugin-content-docs@npm:^3.5.2":
+"@docusaurus/plugin-content-docs@npm:3.5.2":
   version: 3.5.2
   resolution: "@docusaurus/plugin-content-docs@npm:3.5.2"
   dependencies:
@@ -2201,7 +2175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-common@npm:3.5.2, @docusaurus/theme-common@npm:^3.5.2":
+"@docusaurus/theme-common@npm:3.5.2":
   version: 3.5.2
   resolution: "@docusaurus/theme-common@npm:3.5.2"
   dependencies:
@@ -2837,6 +2811,25 @@ __metadata:
     "@types/react": ">=16"
     react: ">=16"
   checksum: 10c0/d210d926ef488d39ad65f04d821936b668eadcdde3b6421e94ec4200ca7ad17f17d24c5cbc543882586af9f08b10e2eea715c728ce6277487945e05c5199f532
+  languageName: node
+  linkType: hard
+
+"@my-common-components/react@file:../packages/react::locator=docs%40workspace%3Adocs":
+  version: 0.0.0
+  resolution: "@my-common-components/react@file:../packages/react#../packages/react::hash=8a01a4&locator=docs%40workspace%3Adocs"
+  dependencies:
+    "@types/classnames": "npm:^2.2.10"
+    "@types/node": "npm:^12.12.38"
+    classnames: "npm:^2.2.6"
+    css-loader: "npm:^3.6.0"
+    react-icons: "npm:^5.3.0"
+    sass: "npm:^1.77.8"
+    sass-loader: "npm:^9.0.2"
+    style-loader: "npm:^1.2.1"
+  peerDependencies:
+    react: ^18.3.1
+    react-dom: ^18.3.1
+  checksum: 10c0/abfe200484124a457e72ca5faa33e20e5016cf42f79647e35660fcd2819798855861e6054c0861920f5814f4888704df4eb2dd7f26d605a6f4c601b17891f9a8
   languageName: node
   linkType: hard
 
@@ -7168,6 +7161,28 @@ __metadata:
   checksum: 10c0/8948d3d03063fb68e04a1e386875f8c3bcc398fc375f535f2b438fad8f41bf1afa6f5e70893ba44f4ae884c089247e0a31045722fa6ff0f01d228da103f1811d
   languageName: node
   linkType: hard
+
+"docs@workspace:docs":
+  version: 0.0.0-use.local
+  resolution: "docs@workspace:docs"
+  dependencies:
+    "@docusaurus/core": "npm:3.5.2"
+    "@docusaurus/module-type-aliases": "npm:3.5.2"
+    "@docusaurus/preset-classic": "npm:3.5.2"
+    "@docusaurus/theme-live-codeblock": "npm:^3.5.2"
+    "@docusaurus/tsconfig": "npm:3.5.2"
+    "@docusaurus/types": "npm:3.5.2"
+    "@mdx-js/react": "npm:^3.0.0"
+    "@my-common-components/react": "file:../packages/react"
+    "@types/react": "npm:^18.3.0"
+    "@types/react-dom": "npm:^18.3.0"
+    clsx: "npm:^2.0.0"
+    prism-react-renderer: "npm:^2.3.0"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    typescript: "npm:~5.5.2"
+  languageName: unknown
+  linkType: soft
 
 "doctrine@npm:^2.1.0":
   version: 2.1.0
@@ -13993,7 +14008,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-live@npm:^4.1.6, react-live@npm:^4.1.7":
+"react-live@npm:^4.1.6":
   version: 4.1.7
   resolution: "react-live@npm:4.1.7"
   dependencies:
