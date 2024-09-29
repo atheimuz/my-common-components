@@ -12,7 +12,7 @@ export interface Props {
 const Tag = ({
     children,
     className = "",
-    type = "line",
+    type = "fill",
     color = "gray",
     ...rest
 }: Props) => {

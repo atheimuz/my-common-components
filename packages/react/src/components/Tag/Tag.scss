@@ -6,100 +6,99 @@
     align-items: center;
     padding: 2px 4px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
     border: 1px solid $gray-2;
     color: $gray-4;
 
     &.gray {
-        border-color: $gray-2;
-        background-color: $gray-0;
-
         &.line {
+            border-color: $gray-3;
             color: $gray-4;
         }
 
         &.fill {
-            border-color: $gray-4;
-            background-color: $gray-4;
-            color: $white;
+            border-color: $gray-1;
+            background-color: $gray-1;
+            color: $gray-4;
         }
     }
 
     &.red {
-        border-color: $red-light;
-
         &.line {
-            color: $red-light;
+            border-color: $red-light;
+            color: $red;
         }
 
         &.fill {
-            background-color: $red-light;
-            color: $white;
+            border-color: $red-lightest;
+            background-color: $red-lightest;
+            color: $red;
         }
     }
 
     &.orange {
-        border-color: $orange-light;
-
         &.line {
-            color: $orange-light;
+            border-color: $orange-light;
+            color: $orange;
         }
 
         &.fill {
-            background-color: $orange-light;
-            color: $white;
+            border-color: $orange-lightest;
+            background-color: $orange-lightest;
+            color: $orange;
         }
     }
 
     &.yellow {
-        border-color: $yellow-light;
-
         &.line {
-            color: $yellow-light;
+            border-color: $yellow-light;
+            color: $yellow;
         }
 
         &.fill {
-            background-color: $yellow-light;
-            color: $white;
+            border-color: $yellow-lightest;
+            background-color: $yellow-lightest;
+            color: $yellow;
         }
     }
 
     &.green {
-        border-color: $green-light;
-
         &.line {
-            color: $green-light;
+            border-color: $green-light;
+            color: $green;
         }
 
         &.fill {
-            background-color: $green-light;
-            color: $white;
+            border-color: $green-lightest;
+            background-color: $green-lightest;
+            color: $green;
         }
     }
 
     &.blue {
-        border-color: $blue-light;
-
         &.line {
-            color: $blue-light;
+            border-color: $blue-light;
+            color: $blue;
         }
 
         &.fill {
-            background-color: $blue-light;
-            color: $white;
+            border-color: $blue-lightest;
+            background-color: $blue-lightest;
+            color: $blue;
         }
     }
 
     &.purple {
-        border-color: $purple-light;
-
         &.line {
-            color: $purple-light;
+            border-color: $purple-light;
+            color: $purple;
         }
 
         &.fill {
-            background-color: $purple-light;
-            color: $white;
+            border-color: $purple-lightest;
+            background-color: $purple-lightest;
+            color: $purple;
         }
     }
 }

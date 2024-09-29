@@ -8,10 +8,25 @@ const baseArgs: Props = {
     children: "안녕"
 }
 
+const baseArgTypes = {
+    isOpen: {
+        control: { type: "boolean" }
+    },
+    status: {
+        control: { type: "select" },
+        options: ["success", "error", undefined]
+    },
+    children: {
+        control: { type: "text" }
+    }
+}
+
 export default {
     title: "Example/Toast",
-    component: Toast,
-    args: baseArgs
+    component: Toast
 } as Meta
 
-export const Default: Story = {}
+export const Default: Story = {
+    args: baseArgs,
+    argTypes: baseArgTypes
+}

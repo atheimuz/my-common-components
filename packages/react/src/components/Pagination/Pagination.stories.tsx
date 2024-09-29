@@ -1,29 +1,32 @@
-import React, { useState } from "react"
 import { Story, Meta } from "@storybook/react"
 
 import Pagination, { Props } from "./Pagination"
+
+const baseArgs: Props = {
+    current: 1,
+    unit: 10,
+    total: 30,
+    onChange: (number) => console.log(number)
+}
+
+const baseArgTypes = {
+    current: {
+        control: { type: "number" }
+    },
+    unit: {
+        control: { type: "number" }
+    },
+    total: {
+        control: { type: "number" }
+    }
+}
 
 export default {
     title: "Example/Pagination",
     component: Pagination
 } as Meta
 
-const Template: Story<Props> = ({ current, ...args }) => {
-    const [index, setIndex] = useState<number>(current)
-    return (
-        <Pagination
-            {...args}
-            current={index}
-            onChange={(val) => setIndex(val)}
-        />
-    )
-}
-
-export const Default = Template.bind({})
-Default.argTypes = {
-    total: {
-        control: {
-            type: "number"
-        }
-    }
+export const Default: Story = {
+    args: baseArgs,
+    argTypes: baseArgTypes
 }

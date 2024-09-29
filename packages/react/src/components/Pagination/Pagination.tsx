@@ -3,7 +3,6 @@ import cx from "classnames"
 import "./Pagination.scss"
 
 export interface Props {
-    children?: React.ReactNode
     className?: string
     current: number
     unit: number
@@ -12,7 +11,6 @@ export interface Props {
 }
 
 const Pagination = ({
-    children,
     className = "",
     current = 1,
     unit = 10,

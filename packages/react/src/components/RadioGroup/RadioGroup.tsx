@@ -1,37 +1,40 @@
-import React, { ChangeEvent, createContext, forwardRef, useContext } from "react";
-import cx from "classnames";
-import "./RadioGroup.scss";
+import React, {
+    ChangeEvent,
+    createContext,
+    forwardRef,
+    useContext
+} from "react"
+import cx from "classnames"
+import "./RadioGroup.scss"
 
-export interface ItemProps {
-    className?: string;
-    disabled?: boolean;
-    value: string;
-    children: React.ReactNode;
-    [key: string]: any
+export interface ItemProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    className?: string
+    disabled?: boolean
+    value: string
+    children: React.ReactNode
 }
 
 export interface GroupProps {
-    className?: string;
-    value: string;
-    name: string;
-    direction?: "horizontal" | "vertical";
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    children: React.ReactNode | React.ReactNode[];
+    className?: string
+    value: string
+    name: string
+    direction?: "horizontal" | "vertical"
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+    children: React.ReactNode
     [key: string]: any
 }
 
 interface RadioContextType {
-    selectedValue?: string;
-    name?: string;
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-};
+    selectedValue?: string
+    name?: string
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+}
 
-const RadioContext = createContext<RadioContextType>({});
-
+const RadioContext = createContext<RadioContextType>({})
 
 const RadioItem = forwardRef<HTMLInputElement, ItemProps>(
     ({ className, value, disabled, children, ...rest }, ref) => {
-        const { selectedValue, name, onChange } = useContext(RadioContext);
+        const { selectedValue, name, onChange } = useContext(RadioContext)
 
         return (
             <label className={cx("my-radio", className, { disabled })}>
@@ -51,8 +54,9 @@ const RadioItem = forwardRef<HTMLInputElement, ItemProps>(
                 </span>
                 <div>{children}</div>
             </label>
-        );
-    });
+        )
+    }
+)
 
 const RadioGroup = ({
     className,
@@ -72,9 +76,9 @@ const RadioGroup = ({
                 {children}
             </div>
         </RadioContext.Provider>
-    );
-};
+    )
+}
 
-RadioGroup.Item = RadioItem;
+RadioGroup.Item = RadioItem
 
-export default RadioGroup;
+export default RadioGroup

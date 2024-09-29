@@ -3,21 +3,34 @@ import { Story, Meta } from "@storybook/react"
 
 import Button, { Props } from "./Button"
 
+const baseArgs: Props = {
+    theme: "primary",
+    size: "middle",
+    children: "버튼"
+}
+
+const baseArgTypes = {
+    theme: {
+        control: { type: "select" },
+        options: ["primary", "secondary", "tertiary", "dashed", "link"]
+    },
+    size: {
+        control: { type: "select" },
+        options: ["small", "middle", "large"]
+    },
+    children: {
+        control: { type: "text" }
+    }
+}
+
 export default {
     title: "Example/Button",
     component: Button
 } as Meta
 
-const Template: Story<Props> = (args) => <Button {...args} />
-
-export const Default = Template.bind({})
-Default.argTypes = {
-    children: {
-        control: {
-            type: "text"
-        },
-        defaultValue: "Button"
-    }
+export const Default: Story = {
+    args: baseArgs,
+    argTypes: baseArgTypes
 }
 
 export const Theme: Story<Props> = () => {
@@ -30,10 +43,7 @@ export const Theme: Story<Props> = () => {
                     key={index}
                     style={{ display: "flex", marginBottom: "10px" }}
                 >
-                    <Button
-                        key={theme}
-                        theme={theme}
-                    >
+                    <Button key={theme} theme={theme}>
                         {theme}
                     </Button>
                     <Button theme={theme} disabled>

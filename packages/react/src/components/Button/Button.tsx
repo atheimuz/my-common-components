@@ -3,12 +3,12 @@ import cx from "classnames"
 import "./Button.scss"
 import Spinner from "../Spinner"
 
-export interface Props {
-    children: React.ReactNode,
-    className?: string,
-    theme?: "primary" | "secondary" | "tertiary" | "dashed" | "link" | string,
-    size?: "small" | "middle" | "large",
-    disabled?: boolean,
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode
+    className?: string
+    theme?: "primary" | "secondary" | "tertiary" | "dashed" | "link"
+    size?: "small" | "middle" | "large"
+    disabled?: boolean
     isLoading?: boolean
 }
 
