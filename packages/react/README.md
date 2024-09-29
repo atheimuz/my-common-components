@@ -30,16 +30,20 @@ class Example extends Component {
 
 -   Alert
 -   Button
--   Message
--   Switch
--   Select
--   Input
--   RadioGroup
 -   Checkbox
--   Tooltip
 -   Collapse
+-   Message
+-   Segmented
+-   Select
+-   Switch
+-   Spinner
 -   Pagination
+-   RadioGroup
+-   Tab
 -   Tag
+-   TextField
+-   Toast
+-   Tooltip
 
 ## License
 
