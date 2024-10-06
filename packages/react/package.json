@@ -1,83 +1,83 @@
 {
-  "name": "@atheimuz/react-ui",
-  "version": "0.0.0",
-  "description": "공통 컴포넌트입니다.",
-  "author": "atheimuz",
-  "license": "MIT",
-  "repository": "https://github.com/atheimuz/my-common-components",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "source": "src/index.ts",
-  "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack serve --open",
-    "prepare": "yarn build",
-    "test": "npm-run-all test:unit test:lint test:build",
-    "test:build": "npm-run-all build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@chromatic-com/storybook": "^1.9.0",
-    "@storybook/addon-essentials": "^8.3.3",
-    "@storybook/addon-interactions": "^8.3.3",
-    "@storybook/addon-links": "^8.3.3",
-    "@storybook/addon-onboarding": "^8.3.3",
-    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
-    "@storybook/blocks": "^8.3.3",
-    "@storybook/react": "^8.3.3",
-    "@storybook/react-webpack5": "^8.3.3",
-    "@storybook/test": "^8.3.3",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^25.1.4",
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.2.0",
-    "cross-env": "^7.0.2",
-    "eslint-plugin-storybook": "^0.8.0",
-    "gh-pages": "^2.2.0",
-    "npm-run-all": "^4.1.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "storybook": "^8.3.3",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.5.4",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
-  },
-  "dependencies": {
-    "@types/classnames": "^2.2.10",
-    "@types/node": "^12.12.38",
-    "classnames": "^2.2.6",
-    "css-loader": "^3.6.0",
-    "react-icons": "^5.3.0",
-    "sass": "^1.77.8",
-    "sass-loader": "^9.0.2",
-    "style-loader": "^1.2.1"
-  },
-  "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
-  }
+    "name": "@atheimuz/react-ui",
+    "version": "0.0.5",
+    "description": "공통 컴포넌트입니다.",
+    "author": "atheimuz",
+    "license": "MIT",
+    "repository": "https://github.com/atheimuz/my-common-components",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "source": "src/index.ts",
+    "scripts": {
+        "build": "webpack --mode production",
+        "start": "webpack serve --open",
+        "prepare": "yarn build",
+        "test": "npm-run-all test:unit test:lint test:build",
+        "test:build": "npm-run-all build",
+        "test:lint": "eslint .",
+        "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+        "test:watch": "react-scripts test --env=jsdom",
+        "predeploy": "cd example && yarn install && yarn run build",
+        "deploy": "gh-pages -d example/build",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@chromatic-com/storybook": "^1.9.0",
+        "@storybook/addon-essentials": "^8.3.3",
+        "@storybook/addon-interactions": "^8.3.3",
+        "@storybook/addon-links": "^8.3.3",
+        "@storybook/addon-onboarding": "^8.3.3",
+        "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+        "@storybook/blocks": "^8.3.3",
+        "@storybook/react": "^8.3.3",
+        "@storybook/react-webpack5": "^8.3.3",
+        "@storybook/test": "^8.3.3",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "@types/jest": "^25.1.4",
+        "@types/react": "^18.3.0",
+        "@types/react-dom": "^18.3.0",
+        "babel-eslint": "^10.0.3",
+        "babel-loader": "^8.2.0",
+        "cross-env": "^7.0.2",
+        "eslint-plugin-storybook": "^0.8.0",
+        "gh-pages": "^2.2.0",
+        "npm-run-all": "^4.1.5",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "storybook": "^8.3.3",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.5.4",
+        "webpack": "^5.94.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0"
+    },
+    "dependencies": {
+        "@types/classnames": "^2.2.10",
+        "@types/node": "^12.12.38",
+        "classnames": "^2.2.6",
+        "css-loader": "^3.6.0",
+        "react-icons": "^5.3.0",
+        "sass": "^1.77.8",
+        "sass-loader": "^9.0.2",
+        "style-loader": "^1.2.1"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:storybook/recommended"
+        ]
+    }
 }
