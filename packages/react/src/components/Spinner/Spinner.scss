@@ -11,5 +11,8 @@
 
 .my-spinner {
     font-size: inherit;
-    animation: rotate 1.5s linear infinite;
+
+    svg {
+        animation: rotate 1.2s linear infinite;
+    }
 }

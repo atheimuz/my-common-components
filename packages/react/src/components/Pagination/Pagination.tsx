@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react"
+import { CgChevronLeft, CgChevronRight } from "react-icons/cg"
 import cx from "classnames"
 import "./Pagination.scss"
 
@@ -30,7 +31,7 @@ const Pagination = ({
                         className="my-pagination-control-btn"
                         onClick={() => setStep(step - 1)}
                     >
-                        &lt;
+                        <CgChevronLeft />
                     </button>
                 </li>
             )}
@@ -60,7 +61,7 @@ const Pagination = ({
                         className="my-pagination-control-btn"
                         onClick={() => setStep(step + 1)}
                     >
-                        &gt;
+                        <CgChevronRight />
                     </button>
                 </li>
             )}

@@ -6,7 +6,7 @@
     position: relative;
     padding: 8px;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: inherit;
 
     &.gray {
         border-color: $gray-1;
@@ -29,13 +29,13 @@
     &.yellow {
         border-color: $yellow-lightest;
         background-color: $yellow-lightest;
-        color: $yellow;
+        color: $yellow-dark;
     }
 
     &.green {
         border-color: $green-lightest;
         background-color: $green-lightest;
-        color: $green;
+        color: $green-dark;
     }
 
     &.blue {
