@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react"
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Switch, { Props } from "./Switch"
 
@@ -8,23 +7,17 @@ export default {
     component: Switch
 } as Meta
 
-const Template: Story<Props> = ({ checked, ...rest }) => {
-    const [status, setStatus] = useState<boolean>(checked)
-
-    useEffect(() => {
-        setStatus(checked)
-    }, [checked])
-
-    return (
-        <Switch {...rest} checked={status} onClick={() => setStatus(!status)} />
-    )
+const baseArgs: Props = {
+    checked: false
 }
 
-export const Default = Template.bind({})
-Default.argTypes = {
-    checked: {
-        control: {
-            type: "boolean"
-        }
+const baseArgTypes = {
+    theme: {
+        control: { type: "boolean" }
     }
+}
+
+export const Default: StoryObj = {
+    args: baseArgs,
+    argTypes: baseArgTypes
 }

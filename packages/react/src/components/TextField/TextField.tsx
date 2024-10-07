@@ -9,7 +9,7 @@ export interface TextFieldProps {
     children: React.ReactNode | React.ReactNode[]
 }
 export interface InputProps
-    extends React.InputHTMLAttributes<HTMLInputElement> {
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
     className?: string
     type?: "text" | "number" | "email" | "password"
     size?: "small" | "middle" | "large"

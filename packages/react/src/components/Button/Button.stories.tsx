@@ -1,5 +1,5 @@
 import React from "react"
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Button, { Props } from "./Button"
 
@@ -28,29 +28,37 @@ export default {
     component: Button
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes
 }
 
-export const Theme: Story<Props> = () => {
-    const themeArray = ["primary", "secondary", "tertiary", "dashed", "link"]
+export const Theme: StoryObj = {
+    render: () => {
+        const themeArray: Props["theme"][] = [
+            "primary",
+            "secondary",
+            "tertiary",
+            "dashed",
+            "link"
+        ]
 
-    return (
-        <>
-            {themeArray.map((theme, index) => (
-                <div
-                    key={index}
-                    style={{ display: "flex", marginBottom: "10px" }}
-                >
-                    <Button key={theme} theme={theme}>
-                        {theme}
-                    </Button>
-                    <Button theme={theme} disabled>
-                        {theme}
-                    </Button>
-                </div>
-            ))}
-        </>
-    )
+        return (
+            <>
+                {themeArray.map((theme, index) => (
+                    <div
+                        key={index}
+                        style={{ display: "flex", marginBottom: "10px" }}
+                    >
+                        <Button key={theme} theme={theme}>
+                            {theme}
+                        </Button>
+                        <Button theme={theme} disabled>
+                            {theme}
+                        </Button>
+                    </div>
+                ))}
+            </>
+        )
+    }
 }

@@ -1,4 +1,4 @@
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Toast, { Props } from "./Toast"
 
@@ -26,7 +26,7 @@ export default {
     component: Toast
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes
 }

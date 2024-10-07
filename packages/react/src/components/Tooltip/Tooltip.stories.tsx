@@ -1,4 +1,4 @@
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Tooltip, { Props } from "./Tooltip"
 
@@ -31,7 +31,7 @@ export default {
     component: Tooltip
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes
 }

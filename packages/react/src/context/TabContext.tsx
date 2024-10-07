@@ -20,7 +20,7 @@ export const TabProvider = ({
     onChange,
     children
 }: TabProviderProps) => {
-    const { selectedValue, index, setIndex, selectValue } = useTab({
+    const { selectedValue, setIndex, selectValue } = useTab({
         initialValue: value,
         onChange
     })

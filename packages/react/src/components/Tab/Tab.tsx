@@ -28,7 +28,7 @@ const Tab = ({ className, value, onChange, children }: Props) => {
 }
 
 export const TabItem = ({ className, value, children, onClick }: ItemProps) => {
-    const tabRef = useRef<(HTMLButtonElement | null)[]>([])
+    const tabRef = useRef<HTMLButtonElement | null>(null)
     const { selectedValue, selectValue } = useTabContext()
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -37,8 +37,8 @@ export const TabItem = ({ className, value, children, onClick }: ItemProps) => {
     }
 
     useEffect(() => {
-        if (selectedValue === value) {
-            const activeTab = tabRef.current
+        const activeTab = tabRef.current
+        if (selectedValue === value && activeTab) {
             const tabContainer = activeTab.parentElement?.parentElement
 
             if (tabContainer) {

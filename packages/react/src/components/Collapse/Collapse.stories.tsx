@@ -1,5 +1,5 @@
 import React from "react"
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Collapse, { PanelProps } from "./Collapse"
 
@@ -22,7 +22,7 @@ export default {
     component: Collapse
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes,
     render: (args: PanelProps) => (

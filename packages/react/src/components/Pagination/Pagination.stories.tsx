@@ -1,4 +1,4 @@
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Pagination, { Props } from "./Pagination"
 
@@ -26,7 +26,7 @@ export default {
     component: Pagination
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes
 }

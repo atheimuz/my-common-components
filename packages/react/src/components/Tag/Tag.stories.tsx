@@ -1,5 +1,5 @@
 import React from "react"
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Tag, { Props } from "./Tag"
 
@@ -28,14 +28,14 @@ export default {
     component: Tag
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes
 }
 
-export const Color: Story = {
+export const Color: StoryObj = {
     render: () => {
-        const colorArray = [
+        const colorArray: Props["color"][] = [
             "gray",
             "red",
             "orange",

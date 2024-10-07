@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react"
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import RadioGroup, { ItemProps } from "./RadioGroup"
 
@@ -21,10 +21,10 @@ export default {
     component: RadioGroup.Item
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes,
-    render: (args) => {
+    render: (args: ItemProps) => {
         const [value, setValue] = useState<string>("yellow")
         return (
             <RadioGroup

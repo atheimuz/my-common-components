@@ -1,4 +1,4 @@
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Spinner from "./Spinner"
 
@@ -7,4 +7,4 @@ export default {
     component: Spinner
 } as Meta
 
-export const Default: Story = {}
+export const Default: StoryObj = {}

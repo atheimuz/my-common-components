@@ -1,4 +1,4 @@
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Checkbox, { Props } from "./Checkbox"
 
@@ -20,7 +20,7 @@ export default {
     component: Checkbox
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes
 }

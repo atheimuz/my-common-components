@@ -1,5 +1,5 @@
 import React from "react"
-import { Story, Meta } from "@storybook/react"
+import { StoryObj, Meta } from "@storybook/react"
 
 import Alert, { Props } from "./Alert"
 import Button from "../Button"
@@ -25,10 +25,10 @@ export default {
     component: Alert
 } as Meta
 
-export const Default: Story = {
+export const Default: StoryObj = {
     args: baseArgs,
     argTypes: baseArgTypes,
-    render: (args) => (
+    render: (args: Props) => (
         <Alert {...args}>
             <Alert.Header>
                 타이틀 영역

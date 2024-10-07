@@ -9,7 +9,13 @@ interface ToastMessage {
 }
 
 export interface ToastContextType {
-    showToast: (content: ReactNode) => void
+    showToast: ({
+        content,
+        status
+    }: {
+        content: ReactNode
+        status: "success" | "error"
+    }) => void
 }
 
 export const ToastContext = createContext<ToastContextType | undefined>(
