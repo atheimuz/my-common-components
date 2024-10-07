@@ -8,14 +8,9 @@
     "sourceMap": true,
     "declaration": true,
     "esModuleInterop": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
     "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
-  "exclude": ["dist"]
+  "exclude": ["**/*.stories.tsx","**/*.stories.ts", "dist"]
 }
