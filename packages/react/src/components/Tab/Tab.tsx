@@ -3,21 +3,26 @@ import cx from "classnames"
 import { TabProvider, useTabContext } from "../../context/TabContext"
 import "./Tab.scss"
 
-export interface Props {
+export interface Props<T extends string | number> {
     className?: string
-    value: string | number
-    onChange: (value: string | number) => void
+    value: T
+    onChange: (value: T) => void
     children: React.ReactElement[]
 }
 
-export interface ItemProps {
+export interface ItemProps<T extends string | number> {
     className?: string
-    value: string | number
+    value: T
     children: React.ReactNode
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const Tab = ({ className, value, onChange, children }: Props) => {
+const Tab = <T extends string | number>({
+    className,
+    value,
+    onChange,
+    children
+}: Props<T>) => {
     return (
         <TabProvider value={value} onChange={onChange}>
             <div className={cx("my-tab", className)} role="tablist">
@@ -27,7 +32,12 @@ const Tab = ({ className, value, onChange, children }: Props) => {
     )
 }
 
-export const TabItem = ({ className, value, children, onClick }: ItemProps) => {
+export const TabItem = <T extends string | number>({
+    className,
+    value,
+    children,
+    onClick
+}: ItemProps<T>) => {
     const tabRef = useRef<HTMLButtonElement | null>(null)
     const { selectedValue, selectValue } = useTabContext()
 
