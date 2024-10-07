@@ -6,10 +6,11 @@
     "license": "MIT",
     "repository": "https://github.com/atheimuz/my-common-components",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "module": "dist/index.js",
-    "source": "src/index.ts",
     "scripts": {
-        "build": "webpack --mode production",
+        "build:types": "tsc --emitDeclarationOnly",
+        "build": "webpack --mode production && yarn build:types",
         "start": "webpack serve --open",
         "prepare": "yarn build",
         "test": "npm-run-all test:unit test:lint test:build",
