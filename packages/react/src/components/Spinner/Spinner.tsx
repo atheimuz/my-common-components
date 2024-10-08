@@ -1,18 +1,10 @@
 import React from "react"
-import cx from "classnames"
-import { AiOutlineLoading } from "react-icons/ai";
+import { AiOutlineLoading } from "react-icons/ai"
 import "./Spinner.scss"
 
-export interface Props {
-    className?: string,
-}
-
-const Spinner = ({
-    className = "",
-    ...rest
-}: Props) => {
+const Spinner = () => {
     return (
-        <span className={cx("my-spinner", className)} {...rest}>
+        <span className="my-spinner">
             <AiOutlineLoading />
         </span>
     )
