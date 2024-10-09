@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require("webpack")
 
 module.exports = {
     entry: "./src/index.ts",
@@ -9,8 +10,10 @@ module.exports = {
         library: {
             name: "MyCommonComponents",
             type: "umd"
-        }
+        },
+        globalObject: "this"
     },
+    target: "web",
     externals: {
         react: {
             commonjs: "react",
@@ -26,6 +29,9 @@ module.exports = {
         }
     },
     resolve: {
+        fallback: {
+            self: false
+        },
         extensions: [".tsx", ".ts", ".js"]
     },
     module: {
@@ -36,17 +42,17 @@ module.exports = {
                     loader: "ts-loader",
                     options: {
                         transpileOnly: true, // 타입 검사 속도 향상
-                        configFile: "tsconfig.json",
-                    },
+                        configFile: "tsconfig.json"
+                    }
                 },
-                exclude: /(^|[/\\])(dist|build)/, // 빌드 폴더 제외
+                exclude: /(^|[/\\])(dist|build)/ // 빌드 폴더 제외
             },
             {
                 test: /\.js$/,
                 use: {
-                    loader: "babel-loader",
+                    loader: "babel-loader"
                 },
-                exclude: /(^|[/\\])(dist|build)/, // 빌드 폴더 제외
+                exclude: /(^|[/\\])(dist|build)/ // 빌드 폴더 제외
             },
             {
                 test: /\.css$/, // CSS 파일 처리
@@ -62,6 +68,11 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            self: "window"
+        })
+    ],
     devServer: {
         static: path.join(__dirname, "dist"),
         compress: true,
