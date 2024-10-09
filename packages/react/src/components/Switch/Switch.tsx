@@ -1,3 +1,5 @@
+"use client"
+
 import React, { InputHTMLAttributes } from "react"
 import cx from "classnames"
 import "./Switch.scss"

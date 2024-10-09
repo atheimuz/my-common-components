@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useRef, useEffect } from "react"
 import cx from "classnames"
 import { TabProvider, useTabContext } from "../../context/TabContext"

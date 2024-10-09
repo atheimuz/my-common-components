@@ -1,6 +1,8 @@
+"use client"
+
 import React, { createContext, useContext } from "react"
 import cx from "classnames"
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai"
 import Overlay from "../Overlay"
 import "./Alert.scss"
 
@@ -13,20 +15,24 @@ export interface Props {
 }
 
 type AlertContextType = {
-    onClose?: () => void;
-} | null;
+    onClose?: () => void
+} | null
 
 const AlertContext = createContext<AlertContextType>({})
-const Alert = ({ className, children, isOpen, position, onClose, ...rest }: Props) => {
-    if (!isOpen) return null;
+const Alert = ({
+    className,
+    children,
+    isOpen,
+    position,
+    onClose,
+    ...rest
+}: Props) => {
+    if (!isOpen) return null
 
     return (
         <AlertContext.Provider value={{ onClose }}>
             <Overlay>
-                <div
-                    className={cx("my-alert", className, position)}
-                    {...rest}
-                >
+                <div className={cx("my-alert", className, position)} {...rest}>
                     {children}
                 </div>
             </Overlay>
@@ -35,35 +41,22 @@ const Alert = ({ className, children, isOpen, position, onClose, ...rest }: Prop
 }
 
 const Header = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className="my-alert-header">
-            {children}
-        </div>
-    )
+    return <div className="my-alert-header">{children}</div>
 }
 
 const Content = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className="my-alert-content">
-            {children}
-        </div>
-    )
+    return <div className="my-alert-content">{children}</div>
 }
 
 const Footer = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div className="my-alert-footer">
-            {children}
-        </div>
-    )
+    return <div className="my-alert-footer">{children}</div>
 }
 
-
 const CloseBtn = () => {
-    const context = useContext(AlertContext);
+    const context = useContext(AlertContext)
 
-    if (!context) return null;
-    const { onClose } = context;
+    if (!context) return null
+    const { onClose } = context
 
     return (
         <button
@@ -77,9 +70,9 @@ const CloseBtn = () => {
     )
 }
 
-Alert.Header = Header;
-Alert.Content = Content;
-Alert.Footer = Footer;
-Alert.CloseBtn = CloseBtn;
+Alert.Header = Header
+Alert.Content = Content
+Alert.Footer = Footer
+Alert.CloseBtn = CloseBtn
 
 export default Alert

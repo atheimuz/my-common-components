@@ -1,3 +1,5 @@
+"use client"
+
 import { useContext } from "react"
 import { ToastContext, ToastContextType } from "./ToastProvider" // Adjust the import path as necessary
 

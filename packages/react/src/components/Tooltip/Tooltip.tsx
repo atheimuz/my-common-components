@@ -1,6 +1,8 @@
+"use client"
+
 import React, { useState, useEffect } from "react"
 import cx from "classnames"
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai"
 import "./Tooltip.scss"
 
 export interface Props {

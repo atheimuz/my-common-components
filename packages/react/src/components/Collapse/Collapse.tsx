@@ -1,5 +1,7 @@
+"use client"
+
 import React, { useState, useEffect } from "react"
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa"
 import cx from "classnames"
 import "./Collapse.scss"
 

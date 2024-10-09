@@ -1,6 +1,8 @@
+"use client"
+
 import React, { createContext, useContext } from "react"
 import cx from "classnames"
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa"
 import "./Select.scss"
 
 export interface Props {
@@ -20,7 +22,9 @@ export interface OptionProps {
     children: React.ReactNode | React.ReactNode[]
 }
 
-const SelectContext = createContext<{ onChange: Props["onChange"] }>({ onChange: ({ }) => { } })
+const SelectContext = createContext<{ onChange: Props["onChange"] }>({
+    onChange: ({}) => {}
+})
 const Select = ({
     className,
     size = "middle",
@@ -38,14 +42,9 @@ const Select = ({
                 tabIndex={disabled ? undefined : 0}
                 {...rest}
             >
-                <div className="my-select-title">
-                    {renderedValue || value}
-                </div>
+                <div className="my-select-title">{renderedValue || value}</div>
                 <FaAngleDown className="my-select-btn" />
-                {!disabled &&
-                    <ul className="my-select-list">
-                        {children}
-                    </ul>}
+                {!disabled && <ul className="my-select-list">{children}</ul>}
             </div>
         </SelectContext.Provider>
     )
@@ -58,13 +57,13 @@ export const Option = ({
     children,
     ...rest
 }: OptionProps) => {
-    const { onChange } = useContext(SelectContext);
+    const { onChange } = useContext(SelectContext)
 
     const onSelectValue = () => {
-        if (disabled) return;
+        if (disabled) return
 
-        (document.activeElement as HTMLElement).blur();
-        return onChange(value);
+        ;(document.activeElement as HTMLElement).blur()
+        return onChange(value)
     }
 
     return (
