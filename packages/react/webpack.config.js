@@ -34,7 +34,7 @@ module.exports = {
         },
         extensions: [".tsx", ".ts", ".js"],
         alias: {
-            "@atheimuz/react-ui": path.resolve(__dirname, "src")
+            "@atheimuz/react-ui": path.resolve(__dirname, "dist")
         }
     },
     module: {

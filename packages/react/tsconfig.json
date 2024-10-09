@@ -12,7 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "paths": {
-      "@atheimuz/react-ui/*": ["components/*"]
+      "@atheimuz/react-ui/*": ["dist/components/*"]
     }
   },
   "include": ["src"],
