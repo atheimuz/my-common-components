@@ -32,7 +32,10 @@ module.exports = {
         fallback: {
             self: false
         },
-        extensions: [".tsx", ".ts", ".js"]
+        extensions: [".tsx", ".ts", ".js"],
+        alias: {
+            "@atheimuz/react-ui": path.resolve(__dirname, "src")
+        }
     },
     module: {
         rules: [

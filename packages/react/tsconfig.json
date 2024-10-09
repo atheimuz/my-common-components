@@ -9,7 +9,11 @@
     "declaration": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@atheimuz/react-ui/*": ["components/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["**/*.stories.tsx","**/*.stories.ts", "dist"]
